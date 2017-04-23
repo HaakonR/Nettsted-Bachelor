@@ -1,0 +1,72 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F8F8F8;
+    color: black;
+    padding-top: 50px;
+}
+
+.fa fa-bars {
+    color: white;
+}
+
+.navbar-default .navbar-toggle {
+    border: 1px solid #8C0606 !important;
+}
+
+.navbar-toggle {
+    border-radius: 0 !important;
+    color: white;
+}
+
+.navbar-toggle:hover,
+.navbar-toggle:active,
+.navbar-toggle:focus {
+    background-color: grey;
+    color: black;
+}
+
+.img-center {
+    margin: 0 auto;
+}
+
+.navbar-default .navbar-nav>li>a {
+    font-size: 20px;
+    color: white;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.navbar-default .navbar-nav>li>a:focus {
+    color:grey;
+}
+
+#omOss {
+    padding-bottom: 3em;
+}
+
+
+#footer {
+    padding-top: 1.5em;
+    padding-bottom: 1em;
+    background: #333;
+}
+
+.footerTekst {
+    line-height: 18px;
+}
+
+.text-muted p {
+    font-size: .8em;
+    color: #777777;
+}
+
+#to-top {
+    color: black;
+    display: none;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+}

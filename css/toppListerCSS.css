@@ -1,0 +1,98 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F8F8F8;
+    color: black;
+    padding-top: 50px;
+}
+
+.fa fa-bars {
+    color: white;
+}
+
+@media all and (max-width: 768px) {
+    #to-top {
+        position: relative !important;
+        color: white !important;
+    }
+}
+
+.col-md-6 {
+    padding: 20px;
+}
+
+.navbar-default .navbar-toggle {
+    border: 1px solid #8C0606 !important;
+}
+
+th {
+    text-align: justify !important;
+    color: white !important;
+    background-color: #892424 !important;
+}
+
+.table-striped>tbody>tr:nth-of-type(even) {
+    background-color: #ECEAEA !important;
+}
+/*.table-striped>tbody>tr>td>a:nth-of-type(even) {
+color: black !important;
+}*/
+
+td {
+    text-align: justify !important;
+}
+
+.navbar-toggle {
+    border-radius: 0 !important;
+    color: white;
+}
+
+.navbar-toggle:hover,
+.navbar-toggle:active,
+.navbar-toggle:focus {
+    background-color: grey;
+    color: black;
+}
+
+.navbar-default .navbar-nav>li>a {
+    font-size: 20px;
+    color: white;
+}
+
+#btnTabell {
+    color: black !important;
+    cursor: pointer;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.navbar-default .navbar-nav>li>a:focus {
+    color:grey;
+}
+
+#footer {
+    background: #333;
+}
+
+.footerTekst {
+    line-height: 18px;
+}
+
+.text-muted p {
+    font-size: .8em;
+    color: #777777;
+}
+
+#to-top {
+    color: black;
+    display: none;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+}
+
+.kolonne tr {
+    height: 60px;
+}

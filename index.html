@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Forskningsindeksen</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="css/forsideCSS.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Navigasjon -->
+        <nav class="navbar navbar-default navbar-custom navbar-fixed-top" style="background-color: #8C0606; border-bottom:1px solid #EDF5E1;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="icon-bar" aria-hidden="true"></span>
+                        <span class="icon-bar" aria-hidden="true"></span>
+                        <span class="icon-bar" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="http://localhost:9999/prototype5/omOss.html">Om oss</a>
+                        </li>
+                        <li>
+                            <a href="http://localhost:9999/prototype5/FAQ.html">Ofte stilte spørsmål</a>
+                        </li>
+                        <li>
+                            <a href="http://localhost:9999/prototype5/toppLister.html">Topplister</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <header id="top" class="header">
+            <div class="text-vertical-center">
+                <h1>Forskningsindeksen</h1>
+                <h3>Søk etter person</h3>
+                <br>
+                <div class="sok">
+                    <input id="inputSok" placeholder="Skriv inn navn..."><button title="Søk" id="searchIcon" style="color:grey; font-size:25px;" class="glyphicon glyphicon-search"></button>
+                </div>
+                <h3>eller </h3>
+<select name="institusjon" id="institusjon" onchange="hentInstitusjoner()">
+<option>Velg en institusjon</option>
+<option value="7414">Agderforskning</option>
+<option value="1972">Akershus universitetssykehus HF</option>
+<option value="255">Ansgar Teologiske Høgskole</option>
+<option value="189">Arkitektur- og designhøgskolen i Oslo</option>
+<option value="1526">Barratt Due musikkinstitutt</option>
+<option value="2023">Betanien Hospital</option>
+<option value="1620">Bjørknes høyskole</option>
+<option value="7416">Chr. Michelsen Institute</option>
+<option value="7417">Christian Michelsen Research</option>
+<option value="7475">CICERO Senter for klimaforskning</option>
+<option value="190">Det teologiske Menighetsfakultet</option>
+<option value="1990">Diakonhjemmet sykehus</option>
+<option value="253">Dronning Mauds Minne Høgskole for barnehagelærerutdanning</option>
+<option value="1901">Finnmarkssykehuset</option>
+<option value="258">Fjellhaug Internasjonale Høgskole</option>
+<option value="7502">Folkehelseinstituttet</option>
+<option value="7425">Forskningsstiftelsen Fafo</option>
+<option value="1627">Forsvaret</option>
+<option value="7428">Forsvarets forskningsinstitutt</option>
+<option value="7582">Frambu Senter for sjeldne funksjonshemninger</option>
+<option value="7430">Fridtjof Nansens institutt</option>
+<option value="158">Handelshøyskolen BI</option>
+<option value="7431">Havforskningsinstituttet</option>
+<option value="1905">Helgelandssykehuset HF</option>
+<option value="1936">Helse Bergen HF - Haukeland universitetssykehus</option>
+<option value="1932">Helse Fonna HF</option>
+<option value="1935">Helse Førde HF</option>
+<option value="1924">Helse Møre og Romsdal HF</option>
+<option value="1900">Helse Nord RHF</option>
+<option value="1918">Helse Nord-Trøndelag HF</option>
+<option value="1938">Helse Stavanger HF - Stavanger universitetssjukehus</option>
+<option value="203">Høgskolen i Bergen</option>
+<option value="209">Høgskolen i Hedmark</option>
+<option value="210">Høgskolen i Lillehammer</option>
+<option value="211">Høgskolen i Molde - Vitenskapelig høgskole i logistikk</option>
+<option value="215">Høgskolen i Oslo og Akershus</option>
+<option value="222">Høgskolen i Sørøst-Norge
+</option>
+<option value="224">Høgskolen i Østfold</option>
+<option value="218">Høgskolen Stord/Haugesund</option>
+<option value="1622">Høgskulen for landbruk og bygdeutvikling</option>
+<option value="216">Høgskulen i Sogn og Fjordane</option>
+<option value="223">Høgskulen i Volda</option>
+<option value="232">Høyskolen Diakonova</option>
+<option value="1624">Høyskolen for Ledelse og Teologi</option>
+<option value="1615">Høyskolen Kristiania</option>
+<option value="7492">Institutt for energiteknikk</option>
+<option value="7437">Institutt for samfunnsforskning</option>
+<option value="7473">IRIS - International Research Institute of Stavanger</option>
+<option value="5737">Kreftregisteret - Institutt for populasjonsbasert kreftforskning</option>
+<option value="7576">Kriminalomsorgens høgskole og utdanningssenter KRUS</option>
+<option value="260">Kunsthøgskolen i Oslo</option>
+<option value="2031">LHL-klinikkene</option>
+<option value="230">Lovisenberg diakonale høgskole</option>
+<option value="1992">Lovisenberg Diakonale Sykehus</option>
+<option value="7566">MARINTEK</option>
+<option value="1993">Martina Hansens Hospital</option>
+<option value="7419">Meteorologisk institutt</option>
+<option value="7602">Modum Bad</option>
+<option value="7443">Møreforsking</option>
+<option value="7444">Nansen Senter for Miljø og Fjernmåling</option>
+<option value="1305">Nasjonalmuseet for kunst, arkitektur og design</option>
+<option value="7527">Nasjonalt institutt for ernærings- og sjømatforskning</option>
+<option value="6077">Nasjonalt kunnskapssenter om vold og traumatisk stress</option>
+<option value="7463">NIFU Nordisk institutt for studier av innovasjon, forskning og utdanning</option>
+<option value="7460">NILU - Norsk institutt for luftforskning</option>
+<option value="7520">NIOM - Nordisk Institutt for Odontologiske Materialer</option>
+<option value="254">NLA Høgskolen</option>
+<option value="7543">NOFIMA</option>
+<option value="204">Nord Universitet</option>
+<option value="7446">Nordlandsforskning</option>
+<option value="1904">Nordlandssykehuset HF</option>
+<option value="1506">Norges Dansehøyskole</option>
+<option value="7452">Norges Geotekniske Institutt</option>
+<option value="191">Norges Handelshøyskole</option>
+<option value="150">Norges idrettshøgskole</option>
+<option value="192">Norges miljø- og biovitenskapelige universitet</option>
+<option value="178">Norges musikkhøgskole</option>
+<option value="194">Norges teknisk-naturvitenskapelige universitet</option>
+<option value="7453">NORSAR</option>
+<option value="7677">Norsk institutt for bioøkonomi</option>
+<option value="7530">Norsk institutt for kulturminneforskning</option>
+<option value="7511">Norsk institutt for naturforskning</option>
+<option value="7464">Norsk institutt for vannforskning</option>
+<option value="7467">Norsk Regnesentral</option>
+<option value="7501">Norsk senter for bygdeforskning</option>
+<option value="7471">Norsk Utenrikspolitisk Institutt</option>
+<option value="6228">Northern Research Institute Narvik AS</option>
+<option value="6002">Norut Northern Research Institute AS</option>
+<option value="7403">NTNU Samfunnsforskning AS</option>
+<option value="2012">Oslo universitetssykehus HF</option>
+<option value="233">Politihøgskolen</option>
+<option value="7435">PRIO - Institutt for fredsforskning</option>
+<option value="1937">Private ideelle i Helse Vest</option>
+<option value="7539">RBUP Øst og Sør</option>
+<option value="2003">Revmatismesykehuset AS</option>
+<option value="7572">Samfunns- og næringslivsforskning AS</option>
+<option value="231">Sámi allaskuvla/Samisk høgskole</option>
+<option value="7548">SINTEF Energi AS</option>
+<option value="7569">SINTEF Fiskeri og havbruk AS</option>
+<option value="7571">SINTEF Petroleum AS</option>
+<option value="7630">SINTEF Raufoss Manufacturing AS</option>
+<option value="1933">Sjukehusapoteka Vest HF</option>
+<option value="1920">St. Olavs Hospital HF</option>
+<option value="7476">Statens arbeidsmiljøinstitutt</option>
+<option value="1525">Steinerhøyskolen</option>
+<option value="7495">Stiftelsen Frischsenteret for samfunnsøkonomisk forskning</option>
+<option value="7401">Stiftelsen SINTEF</option>
+<option value="1982">Sunnaas sykehus HF</option>
+<option value="1906">Sykehusapotek Nord HF</option>
+<option value="1919">Sykehusapotekene i Midt-Norge HF</option>
+<option value="1986">Sykehusapotekene i Sør-Øst RHF</option>
+<option value="1958">Sykehuset i Vestfold HF</option>
+<option value="1991">Sykehuset Innlandet HF</option>
+<option value="1959">Sykehuset Telemark HF</option>
+<option value="1983">Sykehuset Østfold HF</option>
+<option value="1965">Sørlandet sykehus HF</option>
+<option value="7556">Teknova AS</option>
+<option value="7480">Telemarksforsking</option>
+<option value="7479">Tel-Tek</option>
+<option value="7482">Transportøkonomisk institutt</option>
+<option value="7448">Trøndelag Forskning og Utvikling</option>
+<option value="186">UiT - Norges arktiske universitet</option>
+<option value="305">UNI Research</option>
+<option value="7600">UNI Research Polytec AS</option>
+<option value="201">Universitetet i Agder</option>
+<option value="184">Universitetet i Bergen</option>
+<option value="185">Universitetet i Oslo</option>
+<option value="217">Universitetet i Stavanger</option>
+<option value="195">Universitetssenteret på Svalbard</option>
+<option value="1616">Universitetsstudiene på Kjeller</option>
+<option value="1902">Universitetssykehuset Nord-Norge HF</option>
+<option value="6281">Valnesfjord Helsesportssenter</option>
+<option value="7484">Vestlandsforsking</option>
+<option value="2017">Vestre Viken HF</option>
+<option value="7497">Veterinærinstituttet</option>
+<option value="251">VID vitenskapelige høgskole </option>
+<option value="1655">Westerdals Oslo School of Arts, Communication and Technology</option>
+<option value="7407">Østfoldforskning AS</option>
+<option value="7486">Østlandsforskning AS</option></select><br><br><br>
+<a style="width:90px !important; padding-top:50px;" title="Hjelp" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="Se ofte stilte spørsmål for hjelp med bruk av nettstedet"><i id="infoCircle" class="fa fa-question-circle" style="font-size:50px; color:white; cursor:pointer;"></i></a><br>        
+            </div><br>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div id="loader" style="display:none;"></div>
+            </div>
+        </div>
+        <!-- jQuery -->
+        <script src = "js/jquery.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- AutoComplete -->
+        <link href = "js/jquery/jquery-ui.css" rel = "stylesheet">
+        <script type="text/javascript" src="js/autofullfor.js"></script>
+        <script src = "js/jquery/jquery-ui.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('[data-toggle="popover"]').popover();   
+            });
+        </script>
+    </body>
+</html>

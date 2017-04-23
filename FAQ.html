@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Forskningsindeksen</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <!-- Custom CSS -->
+        <link href="css/faqCSS.css" rel="stylesheet">
+        <!-- Custom Fonts -->
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Navigasjon -->
+        <nav class="navbar navbar-default navbar-custom navbar-fixed-top" style="background-color:#8C0606; border-bottom:1px solid white;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="http://localhost:9999/prototype5/index.html">Forskningsindeksen</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="http://localhost:9999/prototype5/omOss.html">Om oss</a>
+                        </li>
+                        <li>
+                            <a href="http://localhost:9999/prototype5/FAQ.html">Ofte stilte spørsmål</a>
+                        </li>
+                        <li>
+                            <a href="http://localhost:9999/prototype5/toppLister.html">Topplister</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section id="faq">
+            <div class="container" id="tilTopp">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h1>Ofte stilte spørsmål</h1>
+                        <button class="accordion">Spørsmål 1</button>
+                        <div class="panel">
+                            <p>SVAR INN HER</p>
+                        </div>
+
+                        <button class="accordion">Spørsmål 2</button>
+                        <div class="panel">
+                            <p>SVAR INN HER</p>
+                        </div>
+
+                        <button class="accordion">Spørsmål 3</button>
+                        <div class="panel">
+                            <p>SVAR INN HER</p>
+                        </div>
+
+                        <button class="accordion">Spørsmål 4</button>
+                        <div class="panel">
+                            <p>SVAR INN HER</p>
+                        </div>
+
+                        <button class="accordion">Spørsmål 5</button>
+                        <div class="panel">
+                            <p>SVAR INN HER</p>
+                        </div>
+
+                        <button class="accordion">Spørsmål 6</button>
+                        <div class="panel">
+                            <p>SVAR INN HER</p>
+                        </div> 
+
+                        <button class="accordion">Spørsmål 7</button>
+                        <div class="panel">
+                            <p>SVAR INN HER</p>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </section>    
+        <section id="footer">
+            <div class="container">
+                <div class="col-md-6 text-muted">
+                    <h4 style="color:white; font-size:1.1em;">Forskningsindeksen</h4>
+                    <p class="footerTekst">Vi fraskriver oss alt ansvar for mulige konsekvenser som følger av misbruk av informasjonen presentert. Forskningsindeksen baserer seg på CRIStin-systemet og alt som her er presentert er på bakgrunn av de data som er registrert i CRIStin-systemet. Publikum kan her få et innblikk i det økonomiske aspektet samt rangering basert på forskning registrert i CRIStin-systemet. Rangeringene er på ingen måte en målestokk på hvorvidt en forsker er kompetent. <!-- skrive om litt --></p>
+                    <br>
+                    <p class="text-muted">Forskningsindeksen 2017</p>
+                </div>
+                <div class="col-md-12 text-center">
+                </div>
+            </div>
+            <a id="to-top" href="#tilTopp" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i>Til toppen</a>
+        </section>
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                // Add smooth scrolling to all links
+                $("a").on('click', function(event) {
+
+                    // Make sure this.hash has a value before overriding default behavior
+                    if (this.hash !== "") {
+                        // Prevent default anchor click behavior
+                        event.preventDefault();
+
+                        // Store hash
+                        var hash = this.hash;
+
+                        // Using jQuery's animate() method to add smooth page scroll
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top
+                        }, 900, function(){
+
+                            // Add hash (#) to URL when done scrolling (default click behavior)
+                            window.location.hash = hash;
+                        });
+                    } 
+                });
+            });
+
+            //#til-toppen knapp
+            var fixed = false;
+            $(document).scroll(function() {
+                if ($(this).scrollTop() > 250) {
+                    if (!fixed) {
+                        fixed = true;
+                        // $('#to-top').css({position:'fixed', display:'block'});
+                        $('#to-top').show("slow", function() {
+                            $('#to-top').css({
+                                position: 'fixed',
+                                display: 'block'
+                            });
+                        });
+                    }
+                } else {
+                    if (fixed) {
+                        fixed = false;
+                        $('#to-top').hide("slow", function() {
+                            $('#to-top').css({
+                                display: 'none'
+                            });
+                        });
+                    }
+                }
+            }); 
+
+            function tilbakeForside() {
+                window.location="http://localhost:9999/prototype5/index.html";
+            }
+
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+            for (i = 0; i < acc.length; i++) {
+                acc[i].onclick = function() {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.maxHeight){
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    } 
+                }
+            }
+        </script>
+    </body>
+</html>

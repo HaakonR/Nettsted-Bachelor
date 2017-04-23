@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Forskningsindeksen</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <!-- Custom CSS -->
+        <link href="css/toppListerCSS.css" rel="stylesheet">
+        <!-- Custom Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <!-- Navigasjon -->
+        <nav class="navbar navbar-default navbar-custom navbar-fixed-top" style="background-color:#8C0606;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a title="Tilbake til forsiden" href="http://localhost:9999/prototype5/index.html">Forskningsindeksen</a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="http://localhost:9999/prototype5/omOss.html">Om oss</a>
+                        </li>
+                        <li>
+                            <a href="http://localhost:9999/prototype5/FAQ.html">Ofte stilte spørsmål</a>
+                        </li>
+                        <li>
+                            <a href="http://localhost:9999/prototype5/toppLister.html">Topplister</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <section id="toppListePerson">
+            <div class="container" id="tilTopp">
+                <h1>Topplister</h1>
+                <h2 style="font-size:16px;">Her er rangeringslister for personer, institusjoner og tidsskrifter.</h2>
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <h2>Topp 10 personer totalt</h2>
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Navn</th>
+                                    <th>Poeng</th>
+                                </tr>
+                            </thead>
+                            <tbody class="kolonne" id="toppPersonerTotalt">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <h2>Topp 10 personer 2016</h2>
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Navn</th>
+                                    <th>Poeng</th>
+                                </tr>
+                            </thead>
+                            <tbody class="kolonne" id="toppPersonerAarlig">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="toppListeInstTotalt">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <h2>Topp 10 institusjoner totalt</h2>
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Navn</th>
+                                    <th>Poeng</th>
+                                </tr>
+                            </thead>
+                            <tbody class="kolonne" id="toppInstitusjonerTotalt">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <h2>Topp 10 institusjoner 2016</h2>
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Navn</th>
+                                    <th>Poeng</th>
+                                </tr>
+                            </thead>
+                            <tbody class="kolonne" id="toppInstitusjonerAarlig">
+                            </tbody>
+                        </table>
+                    </div>            
+                </div>
+            </div>
+        </section>
+        <section id="toppListeTidsskrifterNiva1Totalt">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <h2>Topp 10 tidsskrifter totalt nivå 1</h2>
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Navn</th>
+                                    <th style="width:150px;">Antall publikasjoner</th>
+                                </tr>
+                            </thead>
+                            <tbody class="kolonne" id="toppPubKanalTotaltNiva1">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <h2>Topp 10 tidsskrifter 2016 nivå 1</h2>
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Navn</th>
+                                    <th style="width:150px;">Antall publikasjoner</th>
+                                </tr>
+                            </thead>
+                            <tbody class="kolonne" id="toppPubKanalAarligNiva1">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="toppListeTidsskrifterNiva2Totalt">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <h2>Topp 10 tidsskrifter totalt nivå 2</h2>
+                        <div class="tableInstutisjoner">
+                            <table class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Rank</th>
+                                        <th>Navn</th>
+                                        <th style="width:150px;">Antall publikasjoner</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="kolonne" id="toppPubKanalTotaltNiva2">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <h2>Topp 10 tidsskrifter 2016 nivå 2</h2>
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Navn</th>
+                                    <th style="width:150px;">Antall publikasjoner</th>
+                                </tr>
+                            </thead>
+                            <tbody class="kolonne" id="toppPubKanalAarligNiva2">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="footer">
+            <div class="container">
+                <div class="col-md-6 text-muted">
+                    <h4 style="color:white; font-size:1.1em;">Forskningsindeksen</h4>
+                    <p class="footerTekst">Vi fraskriver oss alt ansvar for mulige konsekvenser som følger av misbruk av informasjonen presentert. Forskningsindeksen baserer seg på CRIStin-systemet og alt som her er presentert er på bakgrunn av de data som er registrert i CRIStin-systemet. Publikum kan her få et innblikk i det økonomiske aspektet samt rangering basert på forskning registrert i CRIStin-systemet. Rangeringene er på ingen måte en målestokk på hvorvidt en forsker er kompetent. <!-- skrive om litt --></p>
+                    <br>
+                    <p class="text-muted">Forskningsindeksen 2017</p>
+                </div>
+                <div class="col-md-12 text-center">
+                </div>
+            </div>
+            <a id="to-top" href="#tilTopp" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i>Til toppen</a>
+        </section>
+
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!-- TopplisteJS -->
+        <script src="js/toppListeSide.js"></script>
+        <script>
+            $(function() {
+                // Add smooth scrolling to all links
+                $("a").on('click', function(event) {
+                    if (this.hash !== "") {
+                        event.preventDefault();
+                        var hash = this.hash;
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top - $('nav').outerHeight()
+                        }, 900, function(){
+                            window.location.hash = hash;
+                        });
+                    }
+                });
+
+                hentTopp10PersonerTotalt();
+                hentTopp10Personer2016();
+                hentTopp10InstitusjonerTotalt();
+                hentTopp10Institusjoner2016();
+                hentTopp10TidsskrifterTotaltN1();
+                hentTopp10Tidsskrifter2016N1();
+                hentTopp10TidsskrifterTotaltN2();
+                hentTopp10Tidsskrifter2016N2();
+            });
+        </script>
+    </body>
+</html>

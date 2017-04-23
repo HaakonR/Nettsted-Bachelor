@@ -1,0 +1,305 @@
+html,
+body {
+    background-color: #8C0606;
+    color: #fff;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.fa fa-bars {
+    color: white;
+}
+
+body .ui-autocomplete {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #eaeaea;
+    color: black;
+    border-radius: 5px !important;
+}
+
+body .ui-autocomplete:focus {
+    border-radius: 5px !important;
+}
+
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 7px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 7px solid #EE2323;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.popover {
+    width: 300px;
+    top: -0px;
+    color: black !important;
+}
+
+.navbar-default .navbar-toggle {
+    border: 1px solid #8C0606 !important;
+}
+
+#searchIcon {
+    border-radius: 5px;
+    position: relative;
+    top: 1.4px;
+    right: 38px;
+    background-color: white;
+    border: 1px solid white;
+}
+
+#searchIcon:hover {
+    color: black !important;
+}
+
+#searchIcon:focus {
+    outline: none;
+    color: black !important;
+}
+
+.navbar-toggle {
+    border-radius: 0 !important;
+    color: white;
+}
+
+.navbar-toggle:hover,
+.navbar-toggle:active,
+.navbar-toggle:focus {
+    background-color: #8C0606;
+    color: black;
+}
+
+.text-vertical-center input {
+    color: #3581B8;
+    width: 20em;
+    height: 1.5em;
+    font-size: 1.5em;
+}
+
+.text-vertical-center {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    vertical-align: middle;
+}
+
+.text-vertical-center h1 {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-size: 4.1em;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform:uppercase;
+    text-decoration: underline;
+}
+
+select {
+    align-items: flex-start !important;
+    border-radius: 5px;
+    border: 1px solid white;
+    vertical-align: top;
+    width: 20em;
+    height: 31.5px;
+    color: black;
+    font-size: 1.5em;
+}
+
+select:focus {
+    outline: none;
+}
+
+select option {
+    overflow-x: hidden !important;
+    font-size: 15px !important;
+}
+
+.sok {
+    margin-bottom: 5em !important;
+}
+
+.sok input {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    vertical-align: top;
+    color: black;
+    margin-left: 35px;
+}
+
+.sok input:focus {
+    outline: none;
+}
+
+#sokKnapp:hover {
+    background-color: white !important;
+    color: #8C0606 !important;
+}
+
+@media all and (max-width: 768px) {
+    .text-vertical-center {
+        display: block;
+        text-align: center;
+    }
+    select {
+        display:block;
+        font-size: 1.5em;
+        width: 15em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .sok input {
+        display:block;
+        font-size: 1.5em;
+        width: 15em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #searchIcon {
+        font-size: 22px !important;
+        top: -27px;
+        left: 135px;
+    }
+    #infoCircle {
+        /*font-size: 30px !important;*/
+        display: none;
+    }
+    .text-vertical-center h1 {
+        font-size: 2.5em;
+        letter-spacing: 2px !important;
+    }
+    .text-vertical-center h3 {
+        font-size: 1.8em;
+    }
+    #sokKnapp {
+        width: 12em !important;
+        margin-top: 0.1em !important;
+    }
+    #loader {
+        position: absolute;
+        left: 55%;
+        top: 45%;
+        z-index: 1;
+        width: 100px;
+        height: 100px;
+        border: 5px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 5px solid #EE2323;
+        -webkit-animation: spin 1s linear infinite;
+        animation: spin 1s linear infinite;
+    }
+    .snarveier li {
+        text-align: center;
+    }
+    .snarveier h4 {
+        text-align: center;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .text-vertical-center {
+        display: block;
+        text-align: center;
+    }
+    select {
+        display:block;
+        font-size: 1.3em;
+        width: 12em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .sok input {
+        display:block;
+        font-size: 1.3em;
+        width: 12em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #searchIcon {
+        font-size: 20px !important;
+        top: -25px;
+        left: 90px;
+    }
+    #infoCircle {
+        /*font-size: 30px !important;*/
+        display: none;
+    }
+    .text-vertical-center h1 {
+        font-size: 1.8em;
+        letter-spacing: 0px !important;
+    }
+    .text-vertical-center h3 {
+        font-size: 1.3em;
+    }
+    #sokKnapp {
+        width: 12em !important;
+        margin-top: 0.1em !important;
+    }
+    #loader {
+        position: absolute;
+        left: 59%;
+        top: 45%;
+        z-index: 1;
+        width: 90px;
+        height: 90px;
+        border: 5px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 5px solid #EE2323;
+        -webkit-animation: spin 1s linear infinite;
+        animation: spin 1s linear infinite;
+    }
+    .snarveier li {
+        text-align: center;
+    }
+    .snarveier h4 {
+        text-align: center;
+    }
+}
+
+.navbar-default .navbar-nav>li>a {
+    font-size: 20px;
+    color: white;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.navbar-default .navbar-nav>li>a:focus {
+    color: grey;
+    background-color: #8C0606;
+}
+
+.header {
+    display: table;
+    position: relative;
+    width: 100%;
+    padding-top: 10em;
+    padding-bottom: 10em;
+    background-color: #8C0606;
+    color: #fff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}

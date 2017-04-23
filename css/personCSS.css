@@ -1,0 +1,317 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F8F8F8;
+    color: black;
+    padding-top: 50px;
+}
+
+#institusjon {
+    width:15em;
+    vertical-align: top;
+    height: 23.5px;
+    background-color: #8C0606;
+    color: white;
+    border: 1px solid #8C0606;
+    border-bottom: 1px solid white;
+}
+
+select:focus, input:focus {
+    outline: none;
+}
+
+#tabellSkille {
+    border-right: 1px solid black;
+}
+
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 7px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 7px solid #EE2323;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#btnTabell {
+    color: #8C0606;
+    cursor: pointer;
+}
+
+.tidligereTil {
+    font-style: italic;
+    color: grey;
+}
+
+.popover {
+    width: 300px;
+    top: -27px;
+}
+
+.navbar-default .navbar-toggle {
+    border: 1px solid #8C0606 !important;
+}
+
+.navbar-toggle {
+    border-radius: 0 !important;
+    color: white;
+}
+
+.navbar-toggle:hover,
+.navbar-toggle:active,
+.navbar-toggle:focus {
+    background-color: #8C0606 !important;
+}
+
+section {
+    background-color: #eaeaea;
+}
+
+#institusjon option {
+    background-color:white;
+    color: black;
+    font-size: 15px;
+    width: 10em !important;
+}
+
+#searchIcon {
+    position: relative;
+    background-color: #8C0606;
+    border: 1px solid #8C0606;
+    right: 35px;
+    top: 0.6px;
+}
+
+#inputSok {
+    width:15em;
+    vertical-align: top;
+    background-color: #8C0606;
+    color: white;
+    border: 1px solid #8C0606;
+    border-bottom: 1px solid white;
+    z-index: 1;
+}
+
+/* Overlapping med autocomplete på fixed navbar */
+.ui-autocomplete {
+    z-index:2000 !important;
+    width:15em;
+}
+
+#tilhorighet {
+    vertical-align: top;
+    margin-bottom: 0;
+}
+
+::-webkit-input-placeholder {
+    color: white;
+}
+
+.visningsModus {
+    padding-bottom: 20px;
+}
+
+.kolonne tr {
+    height: 60px;
+}
+
+.poeng {
+    color: #EE2323;
+    width: 150px;
+}
+
+#infoCircle {
+    margin-left: 2px;
+}
+
+canvas {
+    height: 275px !important;
+    width: 550px !important;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+    width: 25px;
+    height: 3px;
+}
+
+.navbar-toggle .icon-bar:nth-of-type(2) {
+    top: 1px;
+}
+
+.navbar-toggle .icon-bar:nth-of-type(3) {
+    top: 2px;
+}
+
+.navbar-toggle .icon-bar {
+    position: relative;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+.navbar-toggle.active .icon-bar:nth-of-type(1) {
+    top: 6px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.navbar-toggle.active .icon-bar:nth-of-type(2) {
+    background-color: transparent !important;
+}
+
+.navbar-toggle.active .icon-bar:nth-of-type(3) {
+    top: -8px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+@media all and (max-width: 1300px) and (min-width: 768px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        margin-right: 1px;
+        display: block;
+    }
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+    .navbar-nav {
+        float: none !important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 0;
+        margin-left: 0;
+    }
+    .collapse.in {
+        display: block !important;
+    }
+    #toppen {
+        position: relative !important;
+        color: white;
+    }
+    #toppen:hover {
+        color: grey !important;
+    }
+}
+
+@media all and (max-width: 768px) {
+    body {
+        padding-top: 55px;
+    }
+    #toppen {
+        position: relative !important;
+        color: white;
+    }
+    #status {
+        font-size: 35px !important;
+    }
+    .diagramWr {
+        overflow-y: scroll !important;
+    }
+    .visningsModus {
+        float: left !important;
+    }
+    .aarligNR {
+        display: block !important;
+    }
+    #inputSok {
+        width: 12em !important;
+    }
+    #institusjon {
+        width: 12em !important;
+    }
+    #infoCircle {
+        display: none;
+    }
+    #tabellSkille {
+        border-right: 0px;
+    }
+}
+
+.meritter {
+    font-size: 18px;
+}
+
+.table-striped {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.navTabell  {
+    margin-top: -1em;
+    margin-bottom: 1em;
+}
+
+.forrige {
+    cursor: pointer;
+    color: #8C0606;
+}
+
+.neste {
+    color: #8C0606;
+    cursor: pointer;
+    float: right;
+    margin-top: 0;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white;
+    font-size: 18px;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.navbar-default .navbar-nav>li>a:focus {
+    color: grey;
+    background-color: #8C0606;
+}
+
+#footer {
+    padding-top: 1.5em;
+    padding-bottom: 1em;
+    background: #333;
+}
+
+.footerTekst {
+    line-height: 18px;
+}
+
+.text-muted p {
+    font-size: .8em;
+    color: #777777;
+}
+
+#toppen {
+    display: none;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+}
