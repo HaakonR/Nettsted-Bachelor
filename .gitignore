@@ -2,8 +2,6 @@
 Thumbs.db
 ehthumbs.db
 
-*.rb linguist-language=HTML, CSS, JAVASCRIPT
-
 # Folder config file
 Desktop.ini
 
