@@ -1,7 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
-$ cat .gitattributes
 *.rb linguist-language=HTML, CSS, JAVASCRIPT
 
 # Custom for Visual Studio
