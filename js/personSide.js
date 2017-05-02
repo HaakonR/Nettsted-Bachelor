@@ -625,8 +625,11 @@ function hentPerson() {
 
         if(data.akronymer == ""){
             document.getElementById("internTabellFeil").innerHTML = "INGEN AKTIVE TILHØRIGHETER!";
-            document.getElementById("aarligInternTabellFeil").innerHTML = "INGEN AKTIVE TILHØRIGHETER!";
-        } else{
+            document.getElementById("forrigeIntern").style.display = "none";
+            document.getElementById("nesteIntern").style.display = "none"; document.getElementById("aarligInternTabellFeil").innerHTML = "INGEN AKTIVE TILHØRIGHETER!";
+            document.getElementById("forrigeInternAarlig").style.display = "none";
+            document.getElementById("nesteInternAarlig").style.display = "none"; 
+        } else {
             var intern = data.intern;
 
             m = new Map();

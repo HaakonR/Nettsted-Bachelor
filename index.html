@@ -8,6 +8,7 @@
         <meta name="author" content="">
 
         <title>Forskningsindeksen</title>
+        <link rel="icon" href="http://localhost:9999/prototype5/img/logo.png">
 
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -54,7 +55,7 @@
                     <input id="inputSok" placeholder="Skriv inn navn..."><button title="Søk" id="searchIcon" style="color:grey; font-size:25px;" class="glyphicon glyphicon-search"></button>
                 </div>
                 <h3>eller </h3>
-<select name="institusjon" id="institusjon" onchange="hentInstitusjoner()">
+<select id="institusjon" onchange="hentInstitusjoner()">
 <option>Velg en institusjon</option>
 <option value="7414">Agderforskning</option>
 <option value="1972">Akershus universitetssykehus HF</option>
@@ -196,8 +197,9 @@
 <option value="1655">Westerdals Oslo School of Arts, Communication and Technology</option>
 <option value="7407">Østfoldforskning AS</option>
 <option value="7486">Østlandsforskning AS</option></select><br><br><br>
-<a style="width:90px !important; padding-top:50px;" title="Hjelp" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="Se ofte stilte spørsmål for hjelp med bruk av nettstedet"><i id="infoCircle" class="fa fa-question-circle" style="font-size:50px; color:white; cursor:pointer;"></i></a><br>        
+<a style="width:90px !important; padding-top:50px;" title="Hjelp" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="Se ofte stilte spørsmål for hjelp med bruk av nettstedet"><i id="infoCircle" class="fa fa-question-circle" style="font-size:50px; color:white; cursor:pointer;"></i></a><br><br>
             </div><br>
+            
         </header>
         <div class="container">
             <div class="row">

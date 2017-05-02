@@ -23,6 +23,19 @@ body .ui-autocomplete:focus {
     border-radius: 5px !important;
 }
 
+#background {
+    margin-left: auto;
+    margin-right: auto;
+    width: 20px;
+    height: 20px;
+    animation: spinner 10s linear infinite;
+    border: 1px solid #333;
+    border-bottom: 1px solid red;
+    border-top: 1px solid red;
+    border-radius: 50%;
+    
+}
+
 #loader {
     position: absolute;
     left: 50%;

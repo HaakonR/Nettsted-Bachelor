@@ -66,6 +66,7 @@ function RedirectInstitusjon() {
 }
 
 function hentInstitusjoner(){
+    console.log(document.getElementById("institusjon").value);
     showLoader();
     var sokeOrdInstitusjon = document.getElementById("institusjon").value;
     $.getJSON("http://localhost:9999/api.scibot/v1/institusjon/" + sokeOrdInstitusjon, function(data) {
