@@ -104,6 +104,7 @@ hr {
 .navbar-default .navbar-nav>li>a {
     font-size: 18px;
     color: white;
+    font-weight: 200;
 }
 
 .navbar-default .navbar-nav>li>a:hover {

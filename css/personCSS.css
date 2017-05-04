@@ -282,6 +282,7 @@ canvas {
 .navbar-default .navbar-nav>li>a {
     color: white;
     font-size: 18px;
+    font-weight: 200;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
