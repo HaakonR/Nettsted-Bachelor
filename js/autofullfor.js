@@ -6,7 +6,6 @@ var sokeOrd = "";
 var sok = [];
 var t = [];
 
-
 $(function() {
     $( "#inputSok" ).autocomplete({
         minLength: 5,

@@ -1,7 +1,6 @@
 html,
 body {
-    background-color: #8C0606;
-    color: #fff;
+    
 }
 
 body {
@@ -33,7 +32,19 @@ body .ui-autocomplete:focus {
     border-bottom: 1px solid red;
     border-top: 1px solid red;
     border-radius: 50%;
-    
+
+}
+
+#stats {
+    display: inline-block;
+    list-style-type: none;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#stats h2 {
+    font-size: 3em;
 }
 
 #loader {
@@ -142,8 +153,8 @@ select:focus {
 }
 
 select option {
-    overflow-x: hidden !important;
     font-size: 15px !important;
+    width: 20em !important;
 }
 
 .sok input {
@@ -216,11 +227,8 @@ select option {
         -webkit-animation: spin 1s linear infinite;
         animation: spin 1s linear infinite;
     }
-    .snarveier li {
-        text-align: center;
-    }
-    .snarveier h4 {
-        text-align: center;
+    #numbers {
+        display: none;
     }
 }
 
@@ -276,22 +284,20 @@ select option {
         -webkit-animation: spin 1s linear infinite;
         animation: spin 1s linear infinite;
     }
-    .snarveier li {
-        text-align: center;
-    }
-    .snarveier h4 {
-        text-align: center;
+    #numbers {
+        display: none;
     }
 }
 
 .navbar-default .navbar-nav>li>a {
-    font-size: 20px;
+    font-size: 18px;
     color: white;
+    font-weight: 200;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
     color: white;
-    text-decoration: underline;
+    border-bottom: 2px solid white;
 }
 
 .navbar-default .navbar-nav>li>a:focus {
@@ -304,11 +310,33 @@ select option {
     position: relative;
     width: 100%;
     padding-top: 10em;
-    padding-bottom: 10em;
+    padding-bottom: 0em;
     background-color: #8C0606;
     color: #fff;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+}
+
+#footer {
+    padding-top: 1.5em;
+    padding-bottom: 1em;
+    background: #333;
+}
+
+.footerTekst {
+    line-height: 18px;
+}
+
+.text-muted p {
+    font-size: .8em;
+    color: #777777;
+}
+
+#toppen {
+    display: none;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
 }

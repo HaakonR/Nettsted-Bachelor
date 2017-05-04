@@ -458,6 +458,17 @@ function skiftAar() {
 
 }
 
+function fjernData1(id) {
+    var temp = document.getElementById(id);
+    var tempParent = temp.parentNode;
+    tempParent.parentNode.removeChild(tempParent);
+}
+
+function fjernData2(id) {
+    var temp = document.getElementById(id);
+    temp.parentNode.removeChild(temp);
+}
+
 //Henter inn json objektet
 function hentPerson() {
     var data = JSON.parse(sessionStorage.getItem("hukommelse"));
@@ -469,33 +480,18 @@ function hentPerson() {
         personNavn = "Søkeresultat: " + " " + data.navn;
     }
     document.getElementById("personTag").innerHTML = personNavn;
-
+    
     if(data.status == "Null forskning!"){
-        var temp = document.getElementById("poeng");
-        var tempParent = temp.parentNode;
-        tempParent.parentNode.removeChild(tempParent);
-        var temp = document.getElementById("poengNytt");
-        var tempParent = temp.parentNode;
-        tempParent.parentNode.removeChild(tempParent);
-        var temp = document.getElementById("rank");
-        var tempParent = temp.parentNode;
-        tempParent.parentNode.removeChild(tempParent);
-        var temp = document.getElementById("rankNytt");
-        var tempParent = temp.parentNode;
-        tempParent.parentNode.removeChild(tempParent);
-        var temp = document.getElementById("kroner");
-        var tempParent = temp.parentNode;
-        tempParent.parentNode.removeChild(tempParent);
-        var temp = document.getElementById("modus");
-        temp.parentNode.removeChild(temp);
-        var temp = document.getElementById("visningLabel");
-        temp.parentNode.removeChild(temp);
-        var temp = document.getElementById("norgesRank");
-        temp.parentNode.removeChild(temp);
-        var temp = document.getElementById("internRank");
-        temp.parentNode.removeChild(temp);
-        var temp = document.getElementById("infoCircle");
-        temp.parentNode.removeChild(temp);
+        fjernData1("poeng");
+        fjernData1("poengNytt");
+        fjernData1("rank");
+        fjernData1("rankNytt");
+        fjernData1("kroner"); 
+        fjernData2("modus");
+        fjernData2("visningLabel");
+        fjernData2("norgesRank");
+        fjernData2("internRank");
+        fjernData2("infoCircle");
         document.getElementById("status").innerHTML = data.status;
     } else{
         if (typeof data.rankNytt !== 'undefined'){
