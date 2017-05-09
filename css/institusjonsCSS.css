@@ -9,8 +9,8 @@ body {
     width:15em;
     vertical-align: top;
     height: 23.5px;
-    background-color: #8C0606;
-    border: 1px solid #8C0606;
+    background-color: rgba(142, 6, 6, 0.0);
+    border: 1px solid rgba(142, 6, 6, 0.0);
     color: white;
     border-bottom: 1px solid white;
 }
@@ -73,8 +73,8 @@ hr {
 
 #searchIcon {
     position: relative;
-    background-color: #8C0606;
-    border: 1px solid #8C0606;
+    background-color: rgba(142, 6, 6, 0.0);;
+    border: 1px solid rgba(142, 6, 6, 0.0);;
     right: 35px;
     top: 0.6px;
 }
@@ -88,9 +88,9 @@ hr {
 #inputSok {
     width:15em;
     vertical-align: top;
-    background-color:#8C0606;
+    background-color: rgba(142, 6, 6, 0.0);
     color: white;
-    border: 1px solid #8C0606;
+    border: 1px solid rgba(142, 6, 6, 0.0);
     border-bottom: 1px solid white;
     z-index: 1;
 }
@@ -102,13 +102,14 @@ hr {
 }
 
 .navbar-default .navbar-nav>li>a {
-    font-size: 18px;
     color: white;
+    font-size: 18px;
     font-weight: 200;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
     color: white;
+    background-color: #8C0606;
     text-decoration: underline;
 }
 

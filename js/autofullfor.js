@@ -51,6 +51,7 @@ function hentPersoner(){
 }
 
 function showLoader() {
+    document.getElementById('main').style.backgroundColor = "#8C0606";
     document.getElementById('top').style.opacity = "0.1";
     document.getElementById('loader').style.display = "block";
 

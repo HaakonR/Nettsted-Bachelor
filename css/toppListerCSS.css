@@ -54,19 +54,20 @@ td {
 }
 
 .navbar-default .navbar-nav>li>a {
-    font-size: 20px;
     color: white;
+    font-size: 18px;
     font-weight: 200;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: white;
+    background-color: #8C0606;
+    text-decoration: underline;
 }
 
 #btnTabell {
     color: black !important;
     cursor: pointer;
-}
-
-.navbar-default .navbar-nav>li>a:hover {
-    color: white;
-    text-decoration: underline;
 }
 
 .navbar-default .navbar-nav>li>a:focus {
