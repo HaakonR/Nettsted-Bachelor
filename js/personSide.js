@@ -229,7 +229,7 @@ function skiftModus() {
 
     skiftAar();
 
-    $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + modus.value, function(data) {
+    $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/person/" + id + "/" + modus.value, function(data) {
         document.getElementById("scoreHeader").innerHTML = modus.options[modus.selectedIndex].innerHTML;
         document.getElementById("scoreAarligHeader").innerHTML = modus.options[modus.selectedIndex].innerHTML;
         document.getElementById("scoreInternHeader").innerHTML = modus.options[modus.selectedIndex].innerHTML;
