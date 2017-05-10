@@ -1,10 +1,10 @@
-var lastClicked = 0;
-var personer = [];
-var indekser = [];
-var flag = false;
-var sokeOrd = "";
-var sok = [];
-var t = [];
+var lastClicked = 0,
+    personer = [],
+    indekser = [],
+    flag = false,
+    sokeOrd = "",
+    sok = [],
+    t = [];
 
 $(function() {
     $( "#inputSok" ).autocomplete({
@@ -30,7 +30,13 @@ function hent() {
                 personer.push(data[i].navn + " | " + data[i].akronymer);
                 indekser.push(data[i].cristinID);
             });
-            $( "#inputSok" ).autocomplete( "option", "source", personer.slice(0,10) );
+            $("#inputSok").autocomplete({ 
+                source: function(request, response) {
+                    var liste = $.ui.autocomplete.filter(personer, request.term);
+                    response(liste.slice(0, 10));
+                }
+            });
+            //$( "#inputSok" ).autocomplete( "option", "source", personer );
         });
     }
 }
@@ -84,7 +90,7 @@ $('#inputSok').on('keyup', function(e) {
     if (e.keyCode === 13) {
         hentPersoner();
     } else if(e.keyCode === 40) {
-        
+
     } else if(e.keyCode === 38) {
     } else {
         hent();

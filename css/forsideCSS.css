@@ -11,6 +11,7 @@ body .ui-autocomplete {
     background-color: #eaeaea;
     color: black;
     border-radius: 5px !important;
+    width: 30em !important;
 }
 
 body .ui-autocomplete:focus {
