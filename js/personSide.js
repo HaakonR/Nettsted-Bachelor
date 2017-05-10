@@ -492,6 +492,7 @@ function hentPerson() {
         fjernData2("norgesRank");
         fjernData2("internRank");
         fjernData2("infoCircle");
+        fjernData2("footer");
         document.getElementById("status").innerHTML = data.status;
     } else{
         if (typeof data.rankNytt !== 'undefined'){
