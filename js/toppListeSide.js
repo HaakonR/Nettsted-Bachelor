@@ -1,12 +1,11 @@
-// ok
 function hentTopp10PersonerTotalt() {
-    const url = "http://localhost:9999/api.scibot/v1/topplister/personertotalt";
+    const url = "http://localhost:9999/api.forskningsindeksen/v1/topplister/personertotalt";
     let tabell = document.getElementById("toppPersonerTotalt");
     person(url, tabell);
 }
-//ok
+
 function hentTopp10Personer2016() {
-    const url = "http://localhost:9999/api.scibot/v1/topplister/personeraarlig";
+    const url = "http://localhost:9999/api.forskningsindeksen/v1/topplister/personeraarlig";
     let tabell = document.getElementById("toppPersonerAarlig");
     person(url, tabell);
     /*
@@ -27,55 +26,55 @@ function hentTopp10Personer2016() {
             }
         });*/
 }
-// ok
+
 function hentTopp10InstitusjonerTotalt() {
-    const url = "http://localhost:9999/api.scibot/v1/topplister/institusjonertotalt";
+    const url = "http://localhost:9999/api.forskningsindeksen/v1/topplister/institusjonertotalt";
     let tabell = document.getElementById("toppInstitusjonerTotalt");
     institusjon(url, tabell);
 }
 
 function hentTopp10Institusjoner2016() {
-    const url = "http://localhost:9999/api.scibot/v1/topplister/institusjoneraarlig";
+    const url = "http://localhost:9999/api.forskningsindeksen/v1/topplister/institusjoneraarlig";
     let tabell = document.getElementById("toppInstitusjonerAarlig");
     institusjon(url, tabell);
 }
 
 function hentTopp10TidsskrifterTotaltN1() {
     // navn, issn, url, kvalitet, antallPublikasjoner
-    const url = "http://localhost:9999/api.scibot/v1/topplister/publikasjonskanalerniva1totalt";
+    const url = "http://localhost:9999/api.forskningsindeksen/v1/topplister/publikasjonskanalerniva1totalt";
     let tabell = document.getElementById("toppPubKanalTotaltNiva1");
     tidsskrift(url, tabell);
 }
 
 function hentTopp10Tidsskrifter2016N1() {
     // samme
-    const url = "http://localhost:9999/api.scibot/v1/topplister/publikasjonskanalerniva1aarlig";
+    const url = "http://localhost:9999/api.forskningsindeksen/v1/topplister/publikasjonskanalerniva1aarlig";
     let tabell = document.getElementById("toppPubKanalAarligNiva1");
     tidsskrift(url, tabell);
 }
 
 function hentTopp10TidsskrifterTotaltN2() {
-    const url = "http://localhost:9999/api.scibot/v1/topplister/publikasjonskanalerniva2totalt";
+    const url = "http://localhost:9999/api.forskningsindeksen/v1/topplister/publikasjonskanalerniva2totalt";
     let tabell = document.getElementById("toppPubKanalTotaltNiva2");
     tidsskrift(url, tabell);
 }
 
 function hentTopp10Tidsskrifter2016N2() {
-    const url =     "http://localhost:9999/api.scibot/v1/topplister/publikasjonskanalerniva2aarlig";
+    const url = "http://localhost:9999/api.forskningsindeksen/v1/topplister/publikasjonskanalerniva2aarlig";
     let tabell = document.getElementById("toppPubKanalAarligNiva2");
     tidsskrift(url, tabell);
 
 }
 
 function hentPerson(id) {
-    $.getJSON("http://localhost:9999/api.scibot/v1/person/" + id, function(data) {
+    $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/person/" + id, function(data) {
         sessionStorage.setItem("hukommelse", JSON.stringify(data));
         RedirectPerson();
     });
 }
 
 function hentInstitusjon(id) {
-    $.getJSON("http://localhost:9999/api.scibot/v1/institusjon/" + id, function(data) {
+    $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/institusjon/" + id, function(data) {
         sessionStorage.setItem("institusjon", JSON.stringify(data));
         RedirectInstitusjon();
     });

@@ -23,7 +23,7 @@ function hent() {
         if(sokeOrd.length < 5 || flag) {
             return;
         }
-        $.getJSON("http://localhost:9999/api.scibot/v1/person?navn=" + sokeOrd, function(data) {
+        $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/person/?navn=" + sokeOrd, function(data) {
             personer = [];
             indekser = [];
             $(data).each(function(i) {
@@ -44,7 +44,8 @@ function hentPersoner(){
         document.getElementById('top').style.opacity = "1";
         document.getElementById('loader').style.display = "none";
     }
-    $.getJSON("http://localhost:9999/api.scibot/v1/person/" + sok, function(data) {
+    $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/person/" + sok, function(data) {
+        console.log(data);
         sessionStorage.setItem("hukommelse", JSON.stringify(data));
         RedirectPerson();
     });
@@ -69,7 +70,7 @@ function hentInstitusjoner(){
     console.log(document.getElementById("institusjon").value);
     showLoader();
     var sokeOrdInstitusjon = document.getElementById("institusjon").value;
-    $.getJSON("http://localhost:9999/api.scibot/v1/institusjon/" + sokeOrdInstitusjon, function(data) {
+    $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/institusjon/" + sokeOrdInstitusjon, function(data) {
         sessionStorage.setItem("institusjon", JSON.stringify(data));
         RedirectInstitusjon();
     });

@@ -111,7 +111,7 @@ function skiftModus() {
 
     skiftAar();
 
-    $.getJSON("http://localhost:9999/api.scibot/v1/institusjon/" + id + "/" + modus.value, function(data) {
+    $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/institusjon/" + id + "/" + modus.value, function(data) {
         document.getElementById("scoreHeader").innerHTML = modus.options[modus.selectedIndex].innerHTML;
         document.getElementById("scoreAarligHeader").innerHTML = modus.options[modus.selectedIndex].innerHTML;
         document.getElementById("tabellFeil").innerHTML = "";
@@ -172,7 +172,7 @@ function skiftAar() {
     document.getElementById("aarligTabellFeil").innerHTML = "";
     var modus = document.getElementById("modus").value;
 
-    $.getJSON("http://localhost:9999/api.scibot/v1/institusjon/" + id + "/" + modus + "/" + aar, function(data) {
+    $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/institusjon/" + id + "/" + modus + "/" + aar, function(data) {
         var tabell = document.getElementById("tabellAarligBody");
         while (tabell.hasChildNodes()) {
             tabell.removeChild(tabell.lastChild);
@@ -232,7 +232,7 @@ function tilbakeForside() {
 }
 
 function tabellSok(id){
-    $.getJSON("http://localhost:9999/api.scibot/v1/institusjon/" + id, function(data) {
+    $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/institusjon/" + id, function(data) {
         sessionStorage.setItem("institusjon", JSON.stringify(data));
         Redirect();
     });

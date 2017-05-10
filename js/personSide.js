@@ -7,10 +7,10 @@ function nesteFemIntern(frem){
     var modus = document.getElementById("modus").value;
     var url = "";
     if(frem == true){
-        url = "http://localhost:9999/api.scibot/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/1/1";
+        url = "http://localhost:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/1/1";
     }
     else{
-        url = "http://localhost:9999/api.scibot/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/1/0";
+        url = "http://localhost:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/1/0";
     }
     $.getJSON(url, function(data) {
         var tabell = document.getElementById("tabellBodyTotalIr");
@@ -62,10 +62,10 @@ function nesteFemInternAarlig(frem){
     var aar = document.getElementById("aar").value;
     var url = "";
     if(frem == true){
-        url = "http://localhost:9999/api.scibot/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/1/" + aar+ "/1";
+        url = "http://localhost:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/1/" + aar+ "/1";
     }
     else{
-        url = "http://localhost:9999/api.scibot/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/1/" + aar +"/0";
+        url = "http://localhost:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/1/" + aar +"/0";
     }
     $.getJSON(url, function(data) {
         var tabell = document.getElementById("tabellBodyAarligIr");
@@ -116,10 +116,10 @@ function nesteFemTotal(frem){
     var modus = document.getElementById("modus").value;
     var url = "";
     if(frem == true){
-        url = "http://localhost:9999/api.scibot/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/0/1";
+        url = "http://localhost:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/0/1";
     }
     else{
-        url = "http://localhost:9999/api.scibot/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/0/0";
+        url = "http://localhost:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/0/0";
     }
     $.getJSON(url, function(data) {
         var tabell = document.getElementById("tabellBody");
@@ -174,10 +174,10 @@ function nesteFemAarlig(frem){
     var aar = document.getElementById("aar").value;
     var url = "";
     if(frem == true){
-        url = "http://localhost:9999/api.scibot/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/0/" + aar+ "/1";
+        url = "http://localhost:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/0/" + aar+ "/1";
     }
     else{
-        url = "http://localhost:9999/api.scibot/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/0/" + aar +"/0";
+        url = "http://localhost:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/0/" + aar +"/0";
     }
     $.getJSON(url, function(data) {
         var tabell = document.getElementById("tabellAarligBody");
@@ -229,7 +229,7 @@ function skiftModus() {
 
     skiftAar();
 
-    $.getJSON("http://localhost:9999/api.scibot/v1/person/" + id + "/" + modus.value, function(data) {
+    $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + modus.value, function(data) {
         document.getElementById("scoreHeader").innerHTML = modus.options[modus.selectedIndex].innerHTML;
         document.getElementById("scoreAarligHeader").innerHTML = modus.options[modus.selectedIndex].innerHTML;
         document.getElementById("scoreInternHeader").innerHTML = modus.options[modus.selectedIndex].innerHTML;
@@ -355,7 +355,7 @@ function skiftAar() {
     document.getElementById("nesteInternAarlig").style.display = "inline";
     var modus = document.getElementById("modus").value;
 
-    $.getJSON("http://localhost:9999/api.scibot/v1/person/" + id + "/" + modus + "/" + aar, function(data) {
+    $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/person/" + id + "/" + modus + "/" + aar, function(data) {
         var tabell = document.getElementById("tabellAarligBody");
         while (tabell.hasChildNodes()) {
             tabell.removeChild(tabell.lastChild);
@@ -746,7 +746,7 @@ function Redirect() {
 }
 
 function tabellSok(id){
-    $.getJSON("http://localhost:9999/api.scibot/v1/person/" + id, function(data) {
+    $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/person/" + id, function(data) {
         sessionStorage.setItem("hukommelse", JSON.stringify(data));
         Redirect();
     });
@@ -759,7 +759,7 @@ $(document).scroll(function() {
     var scroller = $(this).scrollTop();
     if (scroller >= 250 && scroller <= 860) {
         $('#toppen').css({
-            color: 'black'
+            color: '#FF4C3B'
         });
         if (!fixed) {
             fixed = true;
@@ -767,13 +767,13 @@ $(document).scroll(function() {
                 $('#toppen').css({
                     position: 'fixed',
                     display: 'block',
-                    color: 'black'
+                    color: '#FF4C3B'
                 });
             });
         }
     } else if(scroller >= 860){
         $('#toppen').css({
-            color: 'white'
+            color: '#FF4C3B'
         });
     } else {
         if (fixed) {
