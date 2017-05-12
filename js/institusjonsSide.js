@@ -1,4 +1,3 @@
-
 function hentInstitusjon() {
     var data = JSON.parse(sessionStorage.getItem("institusjon"));
     var institusjonsNavn = "";

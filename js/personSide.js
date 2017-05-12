@@ -1,6 +1,4 @@
 function nesteFemIntern(frem){
-    document.getElementById("forrigeIntern").style.display = "inline";
-    document.getElementById("nesteIntern").style.display = "inline";
     var idSession = JSON.parse(sessionStorage.getItem("hukommelse"));
     var id = idSession.cristinID;
     var rank = sessionStorage.getItem("rankIntern");
@@ -18,8 +16,13 @@ function nesteFemIntern(frem){
             tabell.removeChild(tabell.lastChild);
         }
         sessionStorage.setItem("rankIntern", data[2].rankNytt);
-        if(data[2].rankNytt == 3){
-            document.getElementById("forrigeIntern").style.display = "none";
+        if(modus == "0" || modus == "1" || modus == "2" || modus == "3") {
+            var ranking = data[2].rankNytt;
+            if(ranking <= 3) {
+                document.getElementById("forrigeIntern").style.display = "none";
+            } else {
+                document.getElementById("forrigeIntern").style.display = "inline";
+            }
         }
 
         m = new Map();
@@ -53,8 +56,6 @@ function nesteFemIntern(frem){
 }
 
 function nesteFemInternAarlig(frem){
-    document.getElementById("forrigeInternAarlig").style.display = "inline";
-    document.getElementById("nesteInternAarlig").style.display = "inline";
     var idSession = JSON.parse(sessionStorage.getItem("hukommelse"));
     var id = idSession.cristinID;
     var rank = sessionStorage.getItem("rankInternAarlig");
@@ -73,9 +74,14 @@ function nesteFemInternAarlig(frem){
             tabell.removeChild(tabell.lastChild);
         }
         sessionStorage.setItem("rankInternAarlig", data[2].rankNytt);
-        if(data[2].rankNytt == 3){
-            document.getElementById("forrigeInternAarlig").style.display = "none";
-        }
+        if(modus == "0" || modus == "1" || modus == "2" || modus == "3") {
+            var ranking = data[2].rankNytt;
+            if(ranking <= 3) {
+                document.getElementById("forrigeInternAarlig").style.display = "none";
+            } else {
+                document.getElementById("forrigeInternAarlig").style.display = "inline";
+            }
+        }  
 
         m = new Map();
         for(i = 0; i < data.length; i++){
@@ -108,13 +114,11 @@ function nesteFemInternAarlig(frem){
 }
 
 function nesteFemTotal(frem){
-    document.getElementById("forrige").style.display = "inline";
-    document.getElementById("neste").style.display = "inline";
-    var idSession = JSON.parse(sessionStorage.getItem("hukommelse"));
-    var id = idSession.cristinID;
-    var rank = sessionStorage.getItem("rankNytt");
-    var modus = document.getElementById("modus").value;
-    var url = "";
+    var url = "",
+        idSession = JSON.parse(sessionStorage.getItem("hukommelse")),
+        rank = sessionStorage.getItem("rankNytt"),
+        id = idSession.cristinID,
+        modus = document.getElementById("modus").value;
     if(frem == true){
         url = "http://localhost:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/0/1";
     }
@@ -127,9 +131,14 @@ function nesteFemTotal(frem){
             tabell.removeChild(tabell.lastChild);
         }
         sessionStorage.setItem("rankNytt", data[2].rankNytt);
-        if(data[2].rankNytt == 3){
-            document.getElementById("forrige").style.display = "none";
-        }
+        if(modus == "0" || modus == "1" || modus == "2" || modus == "3") {
+            var ranking = data[2].rankNytt;
+            if(ranking <= 3) {
+                document.getElementById("forrige").style.display = "none";
+            } else {
+                document.getElementById("forrige").style.display = "inline";
+            }
+        }  
 
         m = new Map();
         for(i = 0; i < data.length; i++){
@@ -165,8 +174,6 @@ function nesteFemTotal(frem){
 }
 
 function nesteFemAarlig(frem){
-    document.getElementById("forrigeAarlig").style.display = "inline";
-    document.getElementById("nesteAarlig").style.display = "inline";
     var idSession = JSON.parse(sessionStorage.getItem("hukommelse"));
     var id = idSession.cristinID;
     var rank = sessionStorage.getItem("rankAarlig");
@@ -185,8 +192,13 @@ function nesteFemAarlig(frem){
             tabell.removeChild(tabell.lastChild);
         }
         sessionStorage.setItem("rankAarlig", data[2].rankNytt);
-        if(data[2].rankNytt == 3){
-            document.getElementById("forrigeAarlig").style.display = "none";
+        if(modus == "0" || modus == "1" || modus == "2" || modus == "3") {
+            var ranking = data[2].rankNytt;
+            if(ranking <= 3) {
+                document.getElementById("forrigeAarlig").style.display = "none";
+            } else {
+                document.getElementById("forrigeAarlig").style.display = "inline";
+            }
         }
 
         m = new Map();
@@ -292,12 +304,40 @@ function skiftModus() {
             }
 
             // INTERN TOTAL
-            if(data.akronymer == ""){
+            if(data.akronymer == "") {
                 document.getElementById("internTabellFeil").innerHTML = "INGEN AKTIVE TILHØRIGHETER!";
                 document.getElementById("internTabellFeil").innerHTML = "INGEN AKTIVE TILHØRIGHETER!";
-            } else{
+            } else {
                 var intern = data.intern;
+                console.log("Intern rangering etter " + intern.rank);
                 sessionStorage.setItem("rankIntern", intern.rank);
+                if(modus.value == "0" || modus.value == "1" || modus.value == "2" || modus.value == "3") {
+                    var rankTotalt = data.rankNytt,
+                        rankIntern = sessionStorage.getItem("rankIntern"),
+                        rankInternAarlig = sessionStorage.getItem("rankInternAarlig"),
+                        rankAarlig = sessionStorage.getItem("rankAarlig");
+                    console.log("Intern rangering før " + rankIntern);
+                    if(rankTotalt <= 3) {
+                        document.getElementById("forrige").style.display = "none";
+                    } else {
+                        document.getElementById("forrige").style.display = "inline";
+                    } 
+                    if(rankIntern <= 3) {
+                        document.getElementById("forrigeIntern").style.display = "none";
+                    } else {
+                        document.getElementById("forrigeIntern").style.display = "inline";
+                    }
+                    if(rankInternAarlig <= 3) {
+                        document.getElementById("forrigeInternAarlig").style.display = "none";
+                    } else {
+                        document.getElementById("forrigeInternAarlig").style.display = "inline";
+                    } 
+                    if(rankAarlig <= 3) {
+                        document.getElementById("forrigeAarlig").style.display = "none";
+                    } else {
+                        document.getElementById("forrigeAarlig").style.display = "inline";
+                    }
+                }
                 m = new Map();
                 for(i = 0; i < intern.internKonkurrenter.length; i++){
                     var konkurrent = intern.internKonkurrenter[i];
@@ -338,7 +378,6 @@ function skiftModus() {
             }
         }
     });
-
 }
 
 function skiftAar() {
@@ -349,10 +388,6 @@ function skiftAar() {
     document.getElementById("aarligLabel").innerHTML = "År: " + aar;
     document.getElementById("aarligInternTabellFeil").innerHTML = "";
     document.getElementById("aarligTabellFeil").innerHTML = "";
-    document.getElementById("forrigeAarlig").style.display = "inline";
-    document.getElementById("nesteAarlig").style.display = "inline";
-    document.getElementById("forrigeInternAarlig").style.display = "inline";
-    document.getElementById("nesteInternAarlig").style.display = "inline";
     var modus = document.getElementById("modus").value;
 
     $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/person/" + id + "/" + modus + "/" + aar, function(data) {
@@ -364,15 +399,16 @@ function skiftAar() {
         while (tabell.hasChildNodes()) {
             tabell.removeChild(tabell.lastChild);
         }
-        if(data[0].navn == "Ingen produksjon"){
+        if(data[0].navn == "Ingen produksjon") {
             document.getElementById("aarligTabellFeil").innerHTML = "INGEN PRODUKSJON I DETTE ÅRET!";
             document.getElementById("aarligInternTabellFeil").innerHTML = "INGEN PRODUKSJON I DETTE ÅRET!";
             document.getElementById("forrigeAarlig").style.display = "none";
             document.getElementById("nesteAarlig").style.display = "none";
             document.getElementById("forrigeInternAarlig").style.display = "none";
             document.getElementById("nesteInternAarlig").style.display = "none";
-        }
-        else{
+        } else {
+            document.getElementById("nesteAarlig").style.display = "inline";
+            document.getElementById("nesteInternAarlig").style.display = "inline";
             sessionStorage.setItem("rankAarlig", data[0].rank);
             m = new Map();
             for(i = 0; i < data[0].konkurrenter.length; i++){
@@ -414,8 +450,25 @@ function skiftAar() {
                 var tabell = document.getElementById("tabellAarligBody");
                 tabell.appendChild(tr);
             }
-
             sessionStorage.setItem("rankInternAarlig", data[1].rank);
+            
+            if(modus == "0" || modus == "1" || modus == "2" || modus == "3") {
+                var rankAarlig = sessionStorage.getItem("rankAarlig"),
+                    rankInternAarlig = sessionStorage.getItem("rankInternAarlig");
+                console.log(rankAarlig);
+                console.log(rankInternAarlig);
+                if(rankAarlig <= 3) {
+                    document.getElementById("forrigeAarlig").style.display = "none";
+                } else {
+                    document.getElementById("forrigeAarlig").style.display = "inline";
+                }
+                if(rankInternAarlig <= 3) {
+                    document.getElementById("forrigeInternAarlig").style.display = "none";
+                } else {
+                    document.getElementById("forrigeInternAarlig").style.display = "inline";
+                }
+            }
+            
             m = new Map();
             for(i = 0; i < data[1].konkurrenter.length; i++){
                 var konkurrent = data[1].konkurrenter[i];
@@ -480,7 +533,7 @@ function hentPerson() {
         personNavn = "Søkeresultat: " + " " + data.navn;
     }
     document.getElementById("personTag").innerHTML = personNavn;
-    
+
     if(data.status == "Null forskning!"){
         fjernData1("poeng");
         fjernData1("poengNytt");
@@ -566,8 +619,38 @@ function hentPerson() {
             tabell.appendChild(tr);
         }
 
-        if(data.rankNytt == 1 || data.rankNytt == 2 || data.rankNytt == 3){
+        /*if(data.rankNytt == 1 || data.rankNytt == 2 || data.rankNytt == 3){
+            document.getElementById("forrigeIntern").style.display = "none";
+            document.getElementById("forrigeInternAarlig").style.display = "none";
             document.getElementById("forrige").style.display = "none";
+            document.getElementById("forrigeAarlig").style.display = "none";
+
+        }*/
+        if(modus.value == "0" || modus.value == "1" || modus.value == "2" || modus.value == "3") {
+            var rankTotalt = data.rankNytt,
+                rankIntern = sessionStorage.getItem("rankIntern"),
+                rankInternAarlig = sessionStorage.getItem("rankInternAarlig"),
+                rankAarlig = sessionStorage.getItem("rankAarlig");
+            if(rankTotalt <= 3) {
+                document.getElementById("forrige").style.display = "none";
+            } else {
+                document.getElementById("forrige").style.display = "inline";
+            } 
+            if(rankIntern <= 3) {
+                document.getElementById("forrigeIntern").style.display = "none";
+            } else {
+                document.getElementById("forrigeIntern").style.display = "inline";
+            }
+            if(rankInternAarlig <= 3) {
+                document.getElementById("forrigeInternAarlig").style.display = "none";
+            } else {
+                document.getElementById("forrigeInternAarlig").style.display = "inline";
+            } 
+            if(rankAarlig <= 3) {
+                document.getElementById("forrigeAarlig").style.display = "none";
+            } else {
+                document.getElementById("forrigeAarlig").style.display = "inline";
+            }
         }
 
         var aarlig = data.aarlig;
