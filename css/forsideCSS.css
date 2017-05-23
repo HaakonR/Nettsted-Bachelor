@@ -2,16 +2,12 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-.fa fa-bars {
-    color: white;
-}
-
 body .ui-autocomplete {
     font-family: 'Open Sans', sans-serif;
     background-color: #eaeaea;
     color: black;
     border-radius: 5px !important;
-    width: 30em !important;
+    width: 32.5em !important;
 }
 
 body .ui-autocomplete:focus {
@@ -74,50 +70,105 @@ body .ui-autocomplete:focus {
     color: black !important;
 }
 
-.navbar-default .navbar-toggle {
-    border: 1px solid #8C0606 !important;
-}
-
 #searchIcon {
-    border-radius: 5px;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
     position: relative;
-    top: 1.5px;
-    right: 46px;
-    background-color: white;
-    border: 1px solid white;
+    padding: 4px;
+    top: -1.1px;
+    right: 33px;
+    color: white !important;
+    background-color: rgba(142, 6, 6, 0.86);
+    border: 1px solid rgba(142, 6, 6, 0.86);
 }
 
 #searchIcon:hover {
-    color: black !important;
+    background-color: rgba(160, 7, 6, 0.96);
+}
+
+.navbar-default{
+    background: rgba(142, 6, 6, 0.86);
+    border:none !important;
 }
 
 #searchIcon:focus {
     outline: none;
-    color: black !important;
+}
+
+ .navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+    width: 25px;
+    height: 3px;
+    
 }
 
 .navbar-toggle {
-    border-radius: 0 !important;
+    border: 1px solid rgba(142, 6, 6, 0.86) !important;
+    border-radius: 0% !important;
+}
+
+.navbar-toggle:hover {
+    background-color: rgba(142, 6, 6, 0.86) !important;
+    color: white;
+    border: 1px solid rgba(142, 6, 6, 0.86) !important;
+}
+
+.navbar-toggle:active {
+    background-color: rgba(142, 6, 6, 0.86) !important;
+    color: white;
+    border: 1px solid rgba(142, 6, 6, 0.86) !important;
+
+}
+.navbar-toggle:focus {
+    background-color: rgba(142, 6, 6, 0.86) !important;
     color: white;
 }
 
-.navbar-toggle:hover,
-.navbar-toggle:active,
-.navbar-toggle:focus {
-    background-color: #8C0606;
-    color: black;
+.navbar-toggle .icon-bar:nth-of-type(2) {
+    top: 1px;
+}
+
+.navbar-toggle .icon-bar:nth-of-type(3) {
+    top: 2px;
+}
+
+.navbar-toggle .icon-bar {
+    position: relative;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+.navbar-toggle.active .icon-bar:nth-of-type(1) {
+    top: 6px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.navbar-toggle.active .icon-bar:nth-of-type(2) {
+    background-color: transparent !important;
+}
+
+.navbar-toggle.active .icon-bar:nth-of-type(3) {
+    top: -8px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.navbar-toggle {
+    /*border-radius: 0 !important;*/
+    color: white;
 }
 
 .introTekst input {
-    width: 20em;
+    width: 25em;
     height: 1.5em;
-    font-size: 1.5em;
+    font-size: 1.3em;
     border: 1px solid white;
-    border-radius: 5px;
+    border-radius: 3px;
     padding: 5px;
     vertical-align: top;
     color: black;
-    margin-left: 41px;
+    margin-left: 35px;
 }
 
 .introTekst {
@@ -141,13 +192,13 @@ body .ui-autocomplete:focus {
 
 select {
     align-items: flex-start !important;
-    border-radius: 5px;
+    border-radius: 3px;
     border: 1px solid white;
     vertical-align: top;
-    width: 20em;
-    height: 31.5px;
+    width: 25em;
+    height: 1.5em;
     color: black;
-    font-size: 1.5em;
+    font-size: 1.3em;
     margin-bottom: 2em;
 }
 
@@ -164,12 +215,8 @@ select option {
     margin-top: 2em;
 }
 
-.sok input {
-    
-}
-
 .sok input:focus {
-    outline: none;
+    /*outline: none;*/
 }
 
 #sokKnapp:hover {
@@ -184,22 +231,22 @@ select option {
     }
     select {
         display:block;
-        font-size: 1.5em;
+        font-size: 1.2em;
         width: 15em;
         margin-left: auto;
         margin-right: auto;
     }
     .sok input {
         display:block;
-        font-size: 1.5em;
+        font-size: 1.2em;
         width: 15em;
         margin-left: auto;
         margin-right: auto;
     }
     #searchIcon {
-        font-size: 22px !important;
-        top: -27px;
-        left: 135px;
+        font-size: 20px !important;
+        top: -24px;
+        left: 110px;
     }
     #infoCircle {
         /*font-size: 30px !important;*/
@@ -232,6 +279,9 @@ select option {
     #numbers {
         display: none;
     }
+    body .ui-autocomplete {
+        width: 22.5em !important;
+    }
 }
 
 @media all and (max-width: 500px) {
@@ -241,22 +291,25 @@ select option {
     }
     select {
         display:block;
-        font-size: 1.3em;
-        width: 12em;
+        font-size: 1em;
+        width: 13em;
         margin-left: auto;
         margin-right: auto;
+        border-radius: 0px !important;
     }
     .sok input {
         display:block;
-        font-size: 1.3em;
-        width: 12em;
+        font-size: 1em;
+        width: 13em;
+        height: 2em;
         margin-left: auto;
         margin-right: auto;
+        border-radius: 0px !important;
     }
     #searchIcon {
-        font-size: 20px !important;
-        top: -25px;
-        left: 90px;
+        font-size: 16px !important;
+        top: -24px;
+        left: 75px;
     }
     #infoCircle {
         /*font-size: 30px !important;*/
@@ -289,6 +342,9 @@ select option {
     #numbers {
         display: none;
     }
+    body .ui-autocomplete {
+        width: 13em !important;
+    }
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -314,7 +370,9 @@ select option {
     width: 100%;
     padding-top: 10em;
     padding-bottom: 1.3em;
+    /*background-image: linear-gradient(120deg, rgba(245, 33, 33, 0) 87%, rgba(255, 255, 255, 0.08) 15%),linear-gradient(-120deg, rgba(245, 33, 33, 0) 87%, rgba(255, 255, 255, 0.08) 15%), linear-gradient(110deg, rgba(27, 0, 255, 0) 85%, rgba(255, 255, 255, 0.08) 15%),linear-gradient(-100deg, rgba(27, 0, 255, 0) 95%, rgba(255, 255, 255, 0.08) 15%), linear-gradient(103deg, rgba(255, 33, 33, 0) 84%, rgba(255, 255, 255, 0.08) 15%), radial-gradient(circle, #8C0606 0%, #8C0606 100%);*/
     background-color: #8C0606;
+    
     color: #fff;
     -webkit-background-size: cover;
     -moz-background-size: cover;

@@ -3,8 +3,7 @@ var lastClicked = 0,
     indekser = [],
     flag = false,
     sokeOrd = "",
-    sok = [],
-    t = [];
+    sok = [];
 
 $(function() {
     $( "#inputSok" ).autocomplete({
@@ -22,8 +21,7 @@ function hent() {
         sokeOrd = document.getElementById("inputSok").value;
         if(sokeOrd.length < 5 || flag) {
             return;
-        }
-        $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/person/?navn=" + sokeOrd, function(data) {
+        } $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/person/?navn=" + sokeOrd, function(data) {
             personer = [];
             indekser = [];
             $(data).each(function(i) {
@@ -32,12 +30,17 @@ function hent() {
             });
             $("#inputSok").autocomplete({ 
                 source: function(request, response) {
-                    var liste = $.ui.autocomplete.filter(personer, request.term);
-                    response(liste.slice(0, 10));
+                    response(personer.slice(0,10), request.term.slice);
                 }
             });
             //$( "#inputSok" ).autocomplete( "option", "source", personer );
+        }).error(function(jqXHR, textStatus, errorThrown) {
+            if(jqXHR.status == 404) {
+                personer = [];
+                indekser = [];
+            } 
         });
+
     }
 }
 
@@ -51,9 +54,16 @@ function hentPersoner(){
         document.getElementById('loader').style.display = "none";
     }
     $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/person/" + sok, function(data) {
-        console.log(data);
         sessionStorage.setItem("hukommelse", JSON.stringify(data));
         RedirectPerson();
+    }).error(function(jqXHR, textStatus, errorThrown) {
+        if(jqXHR.status == 404) {
+            personer = [];
+            indekser = [];
+        } else {
+            document.getElementById('top').style.opacity = "1";
+            document.getElementById('loader').style.display = "none";
+        }
     });
 }
 
@@ -65,32 +75,45 @@ function showLoader() {
 }
 
 function RedirectPerson() { 
-    window.location="http://localhost:9999/prototype5/sokPerson.html"
+    window.location="http://localhost:9999/prototype5/sokPerson.html";
 }
 
 function RedirectInstitusjon() {
-    window.location="http://localhost:9999/prototype5/sokInstitusjon.html"
+    window.location="http://localhost:9999/prototype5/sokInstitusjon.html";
 }
 
 function hentInstitusjoner(){
-    console.log(document.getElementById("institusjon").value);
     showLoader();
     var sokeOrdInstitusjon = document.getElementById("institusjon").value;
     $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/institusjon/" + sokeOrdInstitusjon, function(data) {
         sessionStorage.setItem("institusjon", JSON.stringify(data));
         RedirectInstitusjon();
+    }).error(function(jqXHR, textStatus, errorThrown) {
+        if(jqXHR.status == 404) {
+            document.getElementById("outputInstitusjon").innerHTML="Ingen resultat";
+        } else {
+            document.getElementById("outputInstitusjon").innerHTML="Oops, her har det skjedd en feil...";
+        }
     });
+
 }
 
 $('#searchIcon').on('click', function(e) {
-    hentPersoner(); 
+    hentPersoner();
+
 });
 
-$('#inputSok').on('keyup', function(e) {
+$('#inputSok').on('keyup', function(e) {    
     if (e.keyCode === 13) {
-        hentPersoner();
+        var output, x;
+        output = document.getElementById("output");
+        x = document.getElementById("inputSok").value;
+        if(x === "") {
+            output.innerHTML = "Skriv inn et navn!";
+        } else {
+            hentPersoner();
+        }
     } else if(e.keyCode === 40) {
-
     } else if(e.keyCode === 38) {
     } else {
         hent();

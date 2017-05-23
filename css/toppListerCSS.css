@@ -9,11 +9,69 @@ body {
     color: white;
 }
 
+#institusjon {
+    width:15em;
+    vertical-align: top;
+    height: 23.5px;
+    background-color: rgba(142, 6, 6, 0.0);
+    color: white;
+    border: 1px solid rgba(142, 6, 6, 0.0);
+    border-bottom: 1px solid white;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+::-webkit-input-placeholder { /* Chrome */
+    color: white;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: white;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: white;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: white;
+}
+
 @media all and (max-width: 768px) {
     #to-top {
         position: relative !important;
         color: white !important;
     }
+}
+
+.ui-autocomplete {
+    z-index:2000 !important;
+    width:15em;
+}
+
+#institusjon option {
+    background-color:white;
+    color: black;
+    font-size: 15px;
+    width: 18em !important;
+ 
+}
+
+#searchIcon {
+    position: relative;
+    background-color: rgba(142, 6, 6, 0.0);
+    border: 1px solid rgba(142, 6, 6, 0.0);
+    right: 35px;
+    top: 0.6px;
+}
+
+#inputSok {
+    width:15em;
+    vertical-align: top;
+    background-color: rgba(142, 6, 6, 0.0);
+    color: white;
+    border: 1px solid rgba(142, 6, 6, 0.0);
+    border-bottom: 1px solid white;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+   
 }
 
 .col-md-6 {

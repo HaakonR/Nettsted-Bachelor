@@ -22,7 +22,7 @@
     </head>
     <body>
         <!-- Navigasjon -->
-        <nav class="navbar navbar-default navbar-custom navbar-fixed-top" style="background-color: rgba(142, 6, 6, 0.86); border-bottom:1px solid rgba(142, 6, 6, 0.86);">
+        <nav class="navbar navbar-default navbar-custom navbar-fixed-top" style="border-bottom:1px solid rgba(142, 6, 6, 0.86);">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -46,14 +46,16 @@
                 </div>
             </div>
         </nav>
+        
         <div id="main">
             <header id="top" class="header">
                 <div class="introTekst">
                     <h1>Forskningsindeksen</h1>
                     <h3>Søk etter person</h3>
                     <div class="sok">
-                        <input id="inputSok" placeholder="Skriv inn navn...">
-                        <button title="Søk" id="searchIcon" style="color:grey; font-size:25px;" class="glyphicon glyphicon-search"></button>
+                        <input spellcheck="false" type="text" id="inputSok" placeholder="Skriv inn navn..." autofocus>
+                        <button title="Søk" id="searchIcon" style=" font-size:20px;" class="glyphicon glyphicon-search"></button>
+                        
                     </div>
                     <div class="sokRad2">
                         <h3>eller</h3>
@@ -198,7 +200,9 @@
                             <option value="251">VID vitenskapelige høgskole </option>
                             <option value="1655">Westerdals Oslo School of Arts, Communication and Technology</option>
                             <option value="7407">Østfoldforskning AS</option>
-                            <option value="7486">Østlandsforskning AS</option></select></div>
+                            <option value="7486">Østlandsforskning AS</option></select>
+                        <p id="outputInstitusjon"></p>
+                    </div>
                     <a style="width:90px !important; padding-top:50px;" title="Hjelp" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="Se ofte stilte spørsmål for hjelp med bruk av nettstedet"><i id="infoCircle" class="fa fa-question-circle" style="font-size:50px; color:white; cursor:pointer;"></i></a>
                 </div>
             </header></div>
@@ -209,7 +213,7 @@
                         <h2 class="page-header" style="border-bottom:5px solid #E04E4B; width:10em; margin-left:auto; margin-right:auto;">Data</h2>
                     </div>
                     <div class="col-lg-6 col-sm-6 text-center">
-                        <h2 class="teller">14000</h2>
+                        <h2 class="teller">200000</h2>
                         <p>PERSONER</p>
                     </div>
                     <div class="col-lg-6 col-sm-6 text-center">
@@ -219,6 +223,7 @@
                 </div>
             </div>
         </section>
+ 
         <div class="container">
             <div class="row">
                 <div id="loader" style="display:none;"></div>
@@ -243,7 +248,20 @@
         <script src = "js/jquery/jquery-ui.js"></script>
         <script>
             $(document).ready(function(){
-                $('[data-toggle="popover"]').popover();   
+                $('[data-toggle="popover"]').popover();
+                var start = 0,
+                    forandring = $('#main'),
+                    offset = forandring.offset();
+                if (forandring.length){
+                    $(document).scroll(function() { 
+                        start = $(this).scrollTop();
+                        if(start > offset.top) {
+                            $(".navbar-default").css('background-color', 'rgba(110, 2, 6, 0.66)');
+                        } else {
+                            $('.navbar-default').css('background-color', 'rgba(142, 6, 6, 0.86)');
+                        }
+                    });
+                }
             });
             $('.teller').each(function(){
                 $(this).prop('Teller',1).animate({
@@ -251,9 +269,13 @@
                 }, {
                     duration: 1200,
                     step: function (t) {
-                        $(this).text(Math.ceil(t));
+                        var tall = Math.ceil(t).toLocaleString();
+                        $(this).text(tall);
                     }
                 });
+            });
+            $(".navbar-toggle").on("click", function () {
+                $(this).toggleClass("active");
             });
         </script>
     </body>
