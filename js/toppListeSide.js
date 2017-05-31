@@ -1,95 +1,78 @@
 function hentTopp10PersonerTotalt() {
-    const url = "http://localhost:9999/api.forskningsindeksen/v1/topplister/personertotalt";
+    const url = "http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/topplister/personertotalt";
     let tabell = document.getElementById("toppPersonerTotalt");
     person(url, tabell);
 }
 
 function hentTopp10Personer2016() {
-    const url = "http://localhost:9999/api.forskningsindeksen/v1/topplister/personeraarlig";
+    const url = "http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/topplister/personeraarlig";
     let tabell = document.getElementById("toppPersonerAarlig");
     person(url, tabell);
-    /*
-        $.getJSON(url, function(data) {
-            for (let i = 0; i < data.length; i++) {
-                let tr = document.createElement("tr");
-                let tRank = document.createElement("td");
-                tRank.innerHTML = i + 1;
-                let tNavn = document.createElement("td");
-                tNavn.innerHTML = "<a onclick='hentPerson("+data[i].cristinID+")'>"+data[i].navn
-                    + "</a>";
-                let tPoeng = document.createElement("td");
-                tPoeng.innerHTML = data[i].poeng;
-                tr.appendChild(tRank);
-                tr.appendChild(tNavn);
-                tr.appendChild(tPoeng);
-                tabell.appendChild(tr);
-            }
-        });*/
 }
 
 function hentTopp10InstitusjonerTotalt() {
-    const url = "http://localhost:9999/api.forskningsindeksen/v1/topplister/institusjonertotalt";
+    const url = "http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/topplister/institusjonertotalt";
     let tabell = document.getElementById("toppInstitusjonerTotalt");
     institusjon(url, tabell);
 }
 
 function hentTopp10Institusjoner2016() {
-    const url = "http://localhost:9999/api.forskningsindeksen/v1/topplister/institusjoneraarlig";
+    const url = "http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/topplister/institusjoneraarlig";
     let tabell = document.getElementById("toppInstitusjonerAarlig");
     institusjon(url, tabell);
 }
 
 function hentTopp10TidsskrifterTotaltN1() {
     // navn, issn, url, kvalitet, antallPublikasjoner
-    const url = "http://localhost:9999/api.forskningsindeksen/v1/topplister/publikasjonskanalerniva1totalt";
+    const url = "http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/topplister/publikasjonskanalerniva1totalt";
     let tabell = document.getElementById("toppPubKanalTotaltNiva1");
     tidsskrift(url, tabell);
 }
 
 function hentTopp10Tidsskrifter2016N1() {
     // samme
-    const url = "http://localhost:9999/api.forskningsindeksen/v1/topplister/publikasjonskanalerniva1aarlig";
+    const url = "http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/topplister/publikasjonskanalerniva1aarlig";
     let tabell = document.getElementById("toppPubKanalAarligNiva1");
     tidsskrift(url, tabell);
 }
 
 function hentTopp10TidsskrifterTotaltN2() {
-    const url = "http://localhost:9999/api.forskningsindeksen/v1/topplister/publikasjonskanalerniva2totalt";
+    const url = "http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/topplister/publikasjonskanalerniva2totalt";
     let tabell = document.getElementById("toppPubKanalTotaltNiva2");
     tidsskrift(url, tabell);
 }
 
 function hentTopp10Tidsskrifter2016N2() {
-    const url = "http://localhost:9999/api.forskningsindeksen/v1/topplister/publikasjonskanalerniva2aarlig";
+    const url = "http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/topplister/publikasjonskanalerniva2aarlig";
     let tabell = document.getElementById("toppPubKanalAarligNiva2");
     tidsskrift(url, tabell);
 
 }
 
 function hentPerson(id) {
-    $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/person/" + id, function(data) {
+    $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/person/" + id, function(data) {
         sessionStorage.setItem("hukommelse", JSON.stringify(data));
         RedirectPerson();
     });
 }
 
 function hentInstitusjon(id) {
-    $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/institusjon/" + id, function(data) {
+    $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/institusjon/" + id, function(data) {
         sessionStorage.setItem("institusjon", JSON.stringify(data));
         RedirectInstitusjon();
     });
 }
 
 function RedirectInstitusjon() {
-    window.location="http://localhost:9999/prototype5/sokInstitusjon.html"
+    window.location="http://forskningsindeksen.vlab.cs.hioa.no/sokInstitusjon.html"
 }
 
 function tilbakeForside() {
-    window.location="http://localhost:9999/prototype5/index.html";
+    window.location="http://forskningsindeksen.vlab.cs.hioa.no/index.html";
 }
 
 function RedirectPerson() {
-    window.location="http://localhost:9999/prototype5/sokPerson.html"
+    window.location="http://forskningsindeksen.vlab.cs.hioa.no/sokPerson.html"
 }
 
 function person(url, tabell) {

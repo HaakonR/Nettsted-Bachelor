@@ -21,14 +21,14 @@ function hent() {
         sokeOrd = document.getElementById("inputSok").value;
         if(sokeOrd.length < 5 || flag) {
             return;
-        } $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/person/?navn=" + sokeOrd, function(data) {
+        } $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/person/?navn=" + sokeOrd, function(data) {
             personer = [];
             indekser = [];
             $(data).each(function(i) {
                 personer.push(data[i].navn + " | " + data[i].akronymer);
                 indekser.push(data[i].cristinID);
             });
-            $("#inputSok").autocomplete({ 
+            $("#inputSok").autocomplete({
                 source: function(request, response) {
                     response(personer.slice(0,10), request.term.slice);
                 }
@@ -38,7 +38,7 @@ function hent() {
             if(jqXHR.status == 404) {
                 personer = [];
                 indekser = [];
-            } 
+            }
         });
 
     }
@@ -53,7 +53,7 @@ function hentPersoner(){
         document.getElementById('top').style.opacity = "1";
         document.getElementById('loader').style.display = "none";
     }
-    $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/person/" + sok, function(data) {
+    $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/person/" + sok, function(data) {
         sessionStorage.setItem("hukommelse", JSON.stringify(data));
         RedirectPerson();
     }).error(function(jqXHR, textStatus, errorThrown) {
@@ -74,18 +74,18 @@ function showLoader() {
 
 }
 
-function RedirectPerson() { 
-    window.location="http://localhost:9999/prototype5/sokPerson.html";
+function RedirectPerson() {
+    window.location="http://forskningsindeksen.vlab.cs.hioa.no/sokPerson.html";
 }
 
 function RedirectInstitusjon() {
-    window.location="http://localhost:9999/prototype5/sokInstitusjon.html";
+    window.location="http://forskningsindeksen.vlab.cs.hioa.no/sokInstitusjon.html";
 }
 
 function hentInstitusjoner(){
     showLoader();
     var sokeOrdInstitusjon = document.getElementById("institusjon").value;
-    $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/institusjon/" + sokeOrdInstitusjon, function(data) {
+    $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/institusjon/" + sokeOrdInstitusjon, function(data) {
         sessionStorage.setItem("institusjon", JSON.stringify(data));
         RedirectInstitusjon();
     }).error(function(jqXHR, textStatus, errorThrown) {
@@ -103,7 +103,7 @@ $('#searchIcon').on('click', function(e) {
 
 });
 
-$('#inputSok').on('keyup', function(e) {    
+$('#inputSok').on('keyup', function(e) {
     if (e.keyCode === 13) {
         var output, x;
         output = document.getElementById("output");

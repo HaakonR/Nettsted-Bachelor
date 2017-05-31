@@ -5,10 +5,10 @@ function nesteFemIntern(frem){
     var modus = document.getElementById("modus").value;
     var url = "";
     if(frem == true){
-        url = "http://localhost:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/1/1";
+        url = "http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/1/1";
     }
     else{
-        url = "http://localhost:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/1/0";
+        url = "http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/1/0";
     }
     $.getJSON(url, function(data) {
         var tabell = document.getElementById("tabellBodyTotalIr");
@@ -63,10 +63,10 @@ function nesteFemInternAarlig(frem){
     var aar = document.getElementById("aar").value;
     var url = "";
     if(frem == true){
-        url = "http://localhost:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/1/" + aar+ "/1";
+        url = "http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/1/" + aar+ "/1";
     }
     else{
-        url = "http://localhost:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/1/" + aar +"/0";
+        url = "http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/1/" + aar +"/0";
     }
     $.getJSON(url, function(data) {
         var tabell = document.getElementById("tabellBodyAarligIr");
@@ -81,7 +81,7 @@ function nesteFemInternAarlig(frem){
             } else {
                 document.getElementById("forrigeInternAarlig").style.display = "inline";
             }
-        }  
+        }
 
         m = new Map();
         for(i = 0; i < data.length; i++){
@@ -120,10 +120,10 @@ function nesteFemTotal(frem){
         id = idSession.cristinID,
         modus = document.getElementById("modus").value;
     if(frem == true){
-        url = "http://localhost:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/0/1";
+        url = "http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/0/1";
     }
     else{
-        url = "http://localhost:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/0/0";
+        url = "http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/0/0";
     }
     $.getJSON(url, function(data) {
         var tabell = document.getElementById("tabellBody");
@@ -138,7 +138,7 @@ function nesteFemTotal(frem){
             } else {
                 document.getElementById("forrige").style.display = "inline";
             }
-        }  
+        }
 
         m = new Map();
         for(i = 0; i < data.length; i++){
@@ -181,10 +181,10 @@ function nesteFemAarlig(frem){
     var aar = document.getElementById("aar").value;
     var url = "";
     if(frem == true){
-        url = "http://localhost:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/0/" + aar+ "/1";
+        url = "http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/0/" + aar+ "/1";
     }
     else{
-        url = "http://localhost:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/0/" + aar +"/0";
+        url = "http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/navigasjon/" + id + "/" + rank + "/" + modus + "/0/" + aar +"/0";
     }
     $.getJSON(url, function(data) {
         var tabell = document.getElementById("tabellAarligBody");
@@ -241,7 +241,7 @@ function skiftModus() {
 
     skiftAar();
 
-    $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/person/" + id + "/" + modus.value, function(data) {
+    $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/person/" + id + "/" + modus.value, function(data) {
         document.getElementById("scoreHeader").innerHTML = modus.options[modus.selectedIndex].innerHTML;
         document.getElementById("scoreAarligHeader").innerHTML = modus.options[modus.selectedIndex].innerHTML;
         document.getElementById("scoreInternHeader").innerHTML = modus.options[modus.selectedIndex].innerHTML;
@@ -321,7 +321,7 @@ function skiftModus() {
                         document.getElementById("forrige").style.display = "none";
                     } else {
                         document.getElementById("forrige").style.display = "inline";
-                    } 
+                    }
                     if(rankIntern <= 3) {
                         document.getElementById("forrigeIntern").style.display = "none";
                     } else {
@@ -331,7 +331,7 @@ function skiftModus() {
                         document.getElementById("forrigeInternAarlig").style.display = "none";
                     } else {
                         document.getElementById("forrigeInternAarlig").style.display = "inline";
-                    } 
+                    }
                     if(rankAarlig <= 3) {
                         document.getElementById("forrigeAarlig").style.display = "none";
                     } else {
@@ -390,7 +390,7 @@ function skiftAar() {
     document.getElementById("aarligTabellFeil").innerHTML = "";
     var modus = document.getElementById("modus").value;
 
-    $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/person/" + id + "/" + modus + "/" + aar, function(data) {
+    $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/person/" + id + "/" + modus + "/" + aar, function(data) {
         var tabell = document.getElementById("tabellAarligBody");
         while (tabell.hasChildNodes()) {
             tabell.removeChild(tabell.lastChild);
@@ -451,7 +451,7 @@ function skiftAar() {
                 tabell.appendChild(tr);
             }
             sessionStorage.setItem("rankInternAarlig", data[1].rank);
-            
+
             if(modus == "0" || modus == "1" || modus == "2" || modus == "3") {
                 var rankAarlig = sessionStorage.getItem("rankAarlig"),
                     rankInternAarlig = sessionStorage.getItem("rankInternAarlig");
@@ -468,7 +468,7 @@ function skiftAar() {
                     document.getElementById("forrigeInternAarlig").style.display = "inline";
                 }
             }
-            
+
             m = new Map();
             for(i = 0; i < data[1].konkurrenter.length; i++){
                 var konkurrent = data[1].konkurrenter[i];
@@ -539,7 +539,7 @@ function hentPerson() {
         fjernData1("poengNytt");
         fjernData1("rank");
         fjernData1("rankNytt");
-        fjernData1("kroner"); 
+        fjernData1("kroner");
         fjernData2("modus");
         fjernData2("visningLabel");
         fjernData2("norgesRank");
@@ -635,7 +635,7 @@ function hentPerson() {
                 document.getElementById("forrige").style.display = "none";
             } else {
                 document.getElementById("forrige").style.display = "inline";
-            } 
+            }
             if(rankIntern <= 3) {
                 document.getElementById("forrigeIntern").style.display = "none";
             } else {
@@ -645,7 +645,7 @@ function hentPerson() {
                 document.getElementById("forrigeInternAarlig").style.display = "none";
             } else {
                 document.getElementById("forrigeInternAarlig").style.display = "inline";
-            } 
+            }
             if(rankAarlig <= 3) {
                 document.getElementById("forrigeAarlig").style.display = "none";
             } else {
@@ -708,7 +708,7 @@ function hentPerson() {
             document.getElementById("forrigeIntern").style.display = "none";
             document.getElementById("nesteIntern").style.display = "none"; document.getElementById("aarligInternTabellFeil").innerHTML = "INGEN AKTIVE TILHØRIGHETER!";
             document.getElementById("forrigeInternAarlig").style.display = "none";
-            document.getElementById("nesteInternAarlig").style.display = "none"; 
+            document.getElementById("nesteInternAarlig").style.display = "none";
         } else {
             var intern = data.intern;
 
@@ -826,11 +826,11 @@ function hentPerson() {
 }
 
 function Redirect() {
-    window.location="http://localhost:9999/prototype5/sokPerson.html";
+    window.location="http://forskningsindeksen.vlab.cs.hioa.no/sokPerson.html";
 }
 
 function tabellSok(id){
-    $.getJSON("http://localhost:9999/api.forskningsindeksen/v1/person/" + id, function(data) {
+    $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/person/" + id, function(data) {
         sessionStorage.setItem("hukommelse", JSON.stringify(data));
         Redirect();
     });

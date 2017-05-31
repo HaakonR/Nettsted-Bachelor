@@ -8,7 +8,7 @@
         <meta name="author" content="">
 
         <title>Forskningsindeksen</title>
-        <link rel="icon" href="http://localhost:9999/prototype5/img/logo.png">
+        <link rel="icon" href="http://forskningsindeksen.vlab.cs.hioa.no/img/logo.png">
 
         <!-- Bootstrap CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -34,19 +34,19 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="http://localhost:9999/prototype5/omOss.html">Om oss</a>
+                            <a href="http://forskningsindeksen.vlab.cs.hioa.no/omOss.html">Om oss</a>
                         </li>
                         <li>
-                            <a href="http://localhost:9999/prototype5/FAQ.html">Ofte stilte spørsmål</a>
+                            <a href="http://forskningsindeksen.vlab.cs.hioa.no/FAQ.html">Ofte stilte spørsmål</a>
                         </li>
                         <li>
-                            <a href="http://localhost:9999/prototype5/toppLister.html">Topplister</a>
+                            <a href="http://forskningsindeksen.vlab.cs.hioa.no/toppLister.html">Topplister</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        
+
         <div id="main">
             <header id="top" class="header">
                 <div class="introTekst">
@@ -55,7 +55,7 @@
                     <div class="sok">
                         <input spellcheck="false" type="text" id="inputSok" placeholder="Skriv inn navn..." autofocus>
                         <button title="Søk" id="searchIcon" style=" font-size:20px;" class="glyphicon glyphicon-search"></button>
-                        
+
                     </div>
                     <div class="sokRad2">
                         <h3>eller</h3>
@@ -223,7 +223,7 @@
                 </div>
             </div>
         </section>
- 
+
         <div class="container">
             <div class="row">
                 <div id="loader" style="display:none;"></div>
@@ -253,7 +253,7 @@
                     forandring = $('#main'),
                     offset = forandring.offset();
                 if (forandring.length){
-                    $(document).scroll(function() { 
+                    $(document).scroll(function() {
                         start = $(this).scrollTop();
                         if(start > offset.top) {
                             $(".navbar-default").css('background-color', 'rgba(110, 2, 6, 0.66)');
