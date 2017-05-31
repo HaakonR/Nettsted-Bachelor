@@ -239,7 +239,7 @@ canvas {
         color: grey !important;
     }
     .navTabell  {
-        margin-bottom: 4em;
+        margin-bottom: 3em;
     }
 }
 
@@ -276,7 +276,7 @@ canvas {
         border-right: 0px;
     }
     .navTabell  {
-        margin-bottom: 4em;
+        margin-bottom: 3em;
     }
 }
 
@@ -285,8 +285,8 @@ canvas {
 }
 
 .table-striped {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
+    /*margin-bottom: 0 !important;
+    padding-bottom: 0 !important;*/
 }
 
 .forrige {

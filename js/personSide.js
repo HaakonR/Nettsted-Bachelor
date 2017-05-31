@@ -24,7 +24,6 @@ function nesteFemIntern(frem){
                 document.getElementById("forrigeIntern").style.display = "inline";
             }
         }
-
         m = new Map();
         for(i = 0; i < data.length; i++){
             var konkurrent = data[i];
@@ -872,25 +871,18 @@ function tabellSok(id){
 //#til-toppen knapp
 var fixed = false;
 $(document).scroll(function() {
-    var scroller = $(this).scrollTop();
-    if (scroller >= 250 && scroller <= 860) {
-        $('#toppen').css({
-            color: '#FF4C3B'
-        });
+    if ($(this).scrollTop() > 250) {
         if (!fixed) {
             fixed = true;
+            // $('#to-top').css({position:'fixed', display:'block'});
             $('#toppen').show("slow", function() {
                 $('#toppen').css({
                     position: 'fixed',
                     display: 'block',
-                    color: '#FF4C3B'
+                    color: 'black'
                 });
             });
         }
-    } else if(scroller >= 860){
-        $('#toppen').css({
-            color: '#FF4C3B'
-        });
     } else {
         if (fixed) {
             fixed = false;

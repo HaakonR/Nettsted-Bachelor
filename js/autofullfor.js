@@ -36,35 +36,33 @@ function hent() {
             //$( "#inputSok" ).autocomplete( "option", "source", personer );
         }).error(function(jqXHR, textStatus, errorThrown) {
             if(jqXHR.status == 404) {
-                personer = [];
-                indekser = [];
+
             }
         });
 
     }
 }
 
-function hentPersoner(){
+function hentPersoner(id){
+    /*sokeOrd = document.getElementById("inputSok").value;
+    sok = indekser[personer.indexOf(sokeOrd)];*/
     showLoader();
-    sokeOrd = document.getElementById("inputSok").value;
     document.getElementById("inputSok").value = "";
-    sok = indekser[personer.indexOf(sokeOrd)];
-    if(sok === undefined) {
+    if(id === undefined) {
         document.getElementById('top').style.opacity = "1";
         document.getElementById('loader').style.display = "none";
     }
-    $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/person/" + sok, function(data) {
+    $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/person/" + id, function(data) {
         sessionStorage.setItem("hukommelse", JSON.stringify(data));
         RedirectPerson();
     }).error(function(jqXHR, textStatus, errorThrown) {
+        document.getElementById('top').style.opacity = "1";
+        document.getElementById('loader').style.display = "none";
         if(jqXHR.status == 404) {
-            personer = [];
-            indekser = [];
-            document.getElementById('top').style.opacity = "1";
-            document.getElementById('loader').style.display = "none";
+            //Not found
+
         } else {
-            document.getElementById('top').style.opacity = "1";
-            document.getElementById('loader').style.display = "none";
+            //Feil
         }
     });
 }
@@ -73,7 +71,6 @@ function showLoader() {
     document.getElementById('main').style.backgroundColor = "#8C0606";
     document.getElementById('top').style.opacity = "0.1";
     document.getElementById('loader').style.display = "block";
-
 }
 
 function RedirectPerson() {
@@ -94,21 +91,23 @@ function hentInstitusjoner(){
         if(jqXHR.status == 404) {
             //Not found
         } else {
-            
+
         }
     });
-
 }
 
-$('#searchIcon').on('click', function(e) {
-    hentPersoner();
+$( "#inputSok" ).on( "autocompleteselect", function( event, ui ) {
+    var id = indekser[personer.indexOf(ui.item.value)];
+    hentPersoner(id);
 });
 
-
+$('#searchIcon').on('click', function(e) {
+    //hentPersoner();
+});
 
 $('#inputSok').on('keyup', function(e) {
     if (e.keyCode === 13) {
-        hentPersoner();
+        //hentPersoner();
     } else if(e.keyCode === 40) {
     } else if(e.keyCode === 38) {
     } else {
