@@ -245,8 +245,8 @@ select option {
     }
     #searchIcon {
         font-size: 20px !important;
-        top: -24px;
-        left: 110px;
+        top: -26px;
+        left: 114px;
     }
     #infoCircle {
         /*font-size: 30px !important;*/
@@ -307,9 +307,9 @@ select option {
         border-radius: 0px !important;
     }
     #searchIcon {
-        font-size: 16px !important;
-        top: -24px;
-        left: 75px;
+        font-size: 18px !important;
+        top: -27.9px;
+        left: 79px;
     }
     #infoCircle {
         /*font-size: 30px !important;*/

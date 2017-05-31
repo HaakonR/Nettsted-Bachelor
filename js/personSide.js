@@ -45,7 +45,11 @@ function nesteFemIntern(frem){
             var person = m.get(array[i]);
             tNavn.innerHTML = "<a title='Klikk for å se denne personen' id='btnTabell' onclick=tabellSok("+person[2]+")>" + person[0] + "</a>";
             tRank.innerHTML = array[i];
-            tScore.innerHTML = person[1];
+            if(modus == "2") {
+                tScore.innerHTML = person[1].toLocaleString();
+            } else {
+                tScore.innerHTML = person[1];
+            }
             tr.appendChild(tRank);
             tr.appendChild(tNavn);
             tr.appendChild(tScore);
@@ -103,7 +107,11 @@ function nesteFemInternAarlig(frem){
             var person = m.get(array[i]);
             tNavn.innerHTML = "<a title='Klikk for å se denne personen' id='btnTabell' onclick=tabellSok("+person[2]+")>" + person[0] + "</a>";
             tRank.innerHTML = array[i];
-            tScore.innerHTML = person[1];
+            if(modus == "2") {
+                tScore.innerHTML = person[1].toLocaleString();
+            } else {
+                tScore.innerHTML = person[1];
+            }
             tr.appendChild(tRank);
             tr.appendChild(tNavn);
             tr.appendChild(tScore);
@@ -162,7 +170,11 @@ function nesteFemTotal(frem){
             tNavn.innerHTML = "<a title='Klikk for å se denne personen' id='btnTabell' onclick=tabellSok("+person[3]+")>" + person[0] + "</a>";
             tRank.innerHTML = array[i];
             tAkronym.innerHTML = person[1];
-            tScore.innerHTML = person[2];
+            if(modus == "2") {
+                tScore.innerHTML = person[2].toLocaleString();
+            } else {
+                tScore.innerHTML = person[2];
+            }
             tr.appendChild(tRank);
             tr.appendChild(tNavn);
             tr.appendChild(tAkronym);
@@ -223,7 +235,11 @@ function nesteFemAarlig(frem){
             tNavn.innerHTML = "<a title='Klikk for å se denne personen' id='btnTabell' onclick=tabellSok("+person[3]+")>" + person[0] + "</a>";
             tRank.innerHTML = array[i];
             tAkronym.innerHTML = person[1];
-            tScore.innerHTML = person[2];
+            if(modus == "2") {
+                tScore.innerHTML = person[2].toLocaleString();
+            } else {
+                tScore.innerHTML = person[2];
+            }
             tr.appendChild(tRank);
             tr.appendChild(tNavn);
             tr.appendChild(tAkronym);
@@ -293,7 +309,11 @@ function skiftModus() {
                     tRank.innerHTML = array[index];
                 }
                 tAkronym.innerHTML = person[1];
-                tScore.innerHTML = person[2];
+                if(modus.value == "2") {
+                    tScore.innerHTML = person[2].toLocaleString();
+                } else {
+                    tScore.innerHTML = person[2];
+                }
                 index++;
                 tr.appendChild(tRank);
                 tr.appendChild(tNavn);
@@ -367,7 +387,11 @@ function skiftModus() {
                         tNavn.innerHTML = "<a title='Klikk for å se denne personen' id='btnTabell' onclick=tabellSok("+person[2]+")>" + person[0] + "</a>";
                         tRank.innerHTML = array[index];
                     }
-                    tScore.innerHTML = person[1];
+                    if(modus.value == "2") {
+                        tScore.innerHTML = person[1].toLocaleString();
+                    } else {
+                        tScore.innerHTML = person[1];
+                    }
                     index++;
                     tr.appendChild(tRank);
                     tr.appendChild(tNavn);
@@ -441,7 +465,11 @@ function skiftAar() {
                     tRank.innerHTML = array[index];
                 }
                 tAkronym.innerHTML = person[1];
-                tScore.innerHTML = person[2];
+                if(modus.value == "2") {
+                    tScore.innerHTML = person[2].toLocaleString();
+                } else {
+                    tScore.innerHTML = person[2];
+                }
                 index++;
                 tr.appendChild(tRank);
                 tr.appendChild(tNavn);
@@ -498,7 +526,11 @@ function skiftAar() {
                     tNavn.innerHTML = "<a title='Klikk for å se denne personen' id='btnTabell' onclick=tabellSok("+person[2]+")>" + person[0] + "</a>";
                     tRank.innerHTML = array[index];
                 }
-                tScore.innerHTML = person[1];
+                if(modus == "2") {
+                    tScore.innerHTML = person[1].toLocaleString();
+                } else {
+                    tScore.innerHTML = person[1];
+                }
                 index++;
                 tr.appendChild(tRank);
                 tr.appendChild(tNavn);

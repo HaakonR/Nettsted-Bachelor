@@ -150,7 +150,11 @@ function skiftModus() {
                     tNavn.innerHTML = "<a title='Klikk for å se denne institusjonen' id='btnTabell' onclick=tabellSok("+person[2]+")>" + person[0] + "</a>";
                     tRank.innerHTML = array[index];
                 }
-                tScore.innerHTML = person[1];
+                if(modus.value == "2") {
+                    tScore.innerHTML = person[1].toLocaleString();
+                } else {
+                    tScore.innerHTML = person[1];
+                }
                 index++;
                 tr.appendChild(tRank);
                 tr.appendChild(tNavn);
@@ -209,7 +213,11 @@ function skiftAar() {
                     tNavn.innerHTML = "<a title='Klikk for å se denne institusjonen' id='btnTabell' onclick=tabellSok("+person[2]+")>" + person[0] + "</a>";
                     tRank.innerHTML = array[index];
                 }
-                tScore.innerHTML = person[1];
+                if(modus == "2") {
+                    tScore.innerHTML = person[1].toLocaleString();
+                } else {
+                    tScore.innerHTML = person[1];
+                }
                 index++;
                 tr.appendChild(tRank);
                 tr.appendChild(tNavn);

@@ -134,13 +134,13 @@ section {
     color: white;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  color: white;
+  color: white !important;
 }
 :-ms-input-placeholder { /* IE 10+ */
   color: white;
 }
 :-moz-placeholder { /* Firefox 18- */
-  color: white;
+  color: white !important;
 }
 
 .visningsModus {
@@ -238,6 +238,9 @@ canvas {
     #toppen:hover {
         color: grey !important;
     }
+    .navTabell  {
+        margin-bottom: 4em;
+    }
 }
 
 @media all and (max-width: 768px) {
@@ -272,6 +275,9 @@ canvas {
     #tabellSkille {
         border-right: 0px;
     }
+    .navTabell  {
+        margin-bottom: 4em;
+    }
 }
 
 .meritter {
@@ -283,11 +289,6 @@ canvas {
     padding-bottom: 0 !important;
 }
 
-.navTabell  {
-    margin-top: -1em;
-    margin-bottom: 1em;
-}
-
 .forrige {
     cursor: pointer;
     color: #8C0606;
@@ -297,7 +298,6 @@ canvas {
     color: #8C0606;
     cursor: pointer;
     float: right;
-    margin-top: 0;
 }
 
 .navbar-default .navbar-nav>li>a {

@@ -60,6 +60,8 @@ function hentPersoner(){
         if(jqXHR.status == 404) {
             personer = [];
             indekser = [];
+            document.getElementById('top').style.opacity = "1";
+            document.getElementById('loader').style.display = "none";
         } else {
             document.getElementById('top').style.opacity = "1";
             document.getElementById('loader').style.display = "none";
@@ -90,9 +92,9 @@ function hentInstitusjoner(){
         RedirectInstitusjon();
     }).error(function(jqXHR, textStatus, errorThrown) {
         if(jqXHR.status == 404) {
-            document.getElementById("outputInstitusjon").innerHTML="Ingen resultat";
+            //Not found
         } else {
-            document.getElementById("outputInstitusjon").innerHTML="Oops, her har det skjedd en feil...";
+            
         }
     });
 
@@ -100,19 +102,13 @@ function hentInstitusjoner(){
 
 $('#searchIcon').on('click', function(e) {
     hentPersoner();
-
 });
+
+
 
 $('#inputSok').on('keyup', function(e) {
     if (e.keyCode === 13) {
-        var output, x;
-        output = document.getElementById("output");
-        x = document.getElementById("inputSok").value;
-        if(x === "") {
-            output.innerHTML = "Skriv inn et navn!";
-        } else {
-            hentPersoner();
-        }
+        hentPersoner();
     } else if(e.keyCode === 40) {
     } else if(e.keyCode === 38) {
     } else {
