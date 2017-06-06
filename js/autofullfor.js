@@ -64,6 +64,8 @@ function hentPersoner(id){
 }
 
 function showLoader() {
+    $(".navbar-collapse").collapse("hide");
+    $(".navbar-toggle").removeClass("active");
     document.getElementById('main').style.backgroundColor = "#8C0606";
     document.getElementById('top').style.opacity = "0.1";
     document.getElementById('loader').style.display = "block";
