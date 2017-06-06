@@ -6,6 +6,8 @@ var lastClicked = 0,
     sok = [];
 
 $(function() {
+    
+    $("#inputSok").val("");
     $( "#inputSok" ).autocomplete({
         minLength: 10,
         source: [],
@@ -125,6 +127,11 @@ function manuellInput() {
 }
 
 function manuellInputKnapp() {
+    $('.nav a').on('click', function(){ 
+        if($('.navbar-toggle').css('display') !='none'){
+            $(".navbar-toggle").trigger( "click" );
+        }
+    });
     hentManuellPerson();
 }
 
@@ -133,13 +140,19 @@ function hentManuellPerson() {
     if (inputstreng.length == 0) return;
     showLoader();
     $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/person/sok?navn=" + inputstreng, function(data){
+        
         sessionStorage.setItem("hukommelse",JSON.stringify(data));
         RedirectPerson();
-    }).error(function(jgXHR, textStatus, errorThrown) {
-       if(jgXHR.status == 404) {
-           // todo
+    }).error(function(jqXHR, textStatus, errorThrown) {
+        console.log(jqXHR.statusCode);
+        document.getElementById("loader").style.display = "none";
+           document.getElementById("top").style.opacity = "1";
+       if(jqXHR.status == 404) {
+           
+           
        }  else {
            // todo
        }
     });
 }
+
