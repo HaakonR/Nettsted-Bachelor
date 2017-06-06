@@ -147,7 +147,7 @@ section {
     color: black;
     font-size: 15px;
     width: 18em !important;
- 
+
 }
 
 #searchIcon {
@@ -167,13 +167,13 @@ section {
     border-bottom: 1px solid white;
     -webkit-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out;
-   
+
 }
 
 /*#inputSok:focus {
-    width: 22em;
-    -webkit-transition: all 300ms ease-in-out;
-    transition: all 300ms ease-in-out;
+width: 22em;
+-webkit-transition: all 300ms ease-in-out;
+transition: all 300ms ease-in-out;
 }*/
 
 /* Overlapping med autocomplete på fixed navbar */
@@ -191,13 +191,13 @@ section {
     color: white;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  color: white !important;
+    color: white !important;
 }
 :-ms-input-placeholder { /* IE 10+ */
-  color: white;
+    color: white;
 }
 :-moz-placeholder { /* Firefox 18- */
-  color: white !important;
+    color: white !important;
 }
 
 .visningsModus {
@@ -298,6 +298,17 @@ canvas {
     .navTabell  {
         margin-bottom: 3em;
     }
+    #institusjon {
+        width: 20em !important;
+    }
+    #inputSok {
+        width: 20em !important;
+    }
+    #inputSok:focus {
+        -webkit-transition: all 300ms ease-in-out;
+        transition: all 300ms ease-in-out;
+        width: 25em !important;
+    }
 }
 
 @media all and (max-width: 768px) {
@@ -321,10 +332,10 @@ canvas {
         display: block !important;
     }
     #inputSok {
-        width: 12em !important;
+        width: 15em !important;
     }
     #institusjon {
-        width: 12em !important;
+        width: 15em !important;
     }
     #infoCircle {
         display: none;
