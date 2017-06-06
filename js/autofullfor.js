@@ -115,3 +115,31 @@ $('#inputSok').on('keyup', function(e) {
         
     }
 });
+
+function manuellInput() {
+    $("#inputSok").on("keyup", function(e) {
+       if (e.keyCode === 13) {
+           hentManuellPerson();
+       }
+    });
+}
+
+function manuellInputKnapp() {
+    hentManuellPerson();
+}
+
+function hentManuellPerson() {
+    var inputstreng = document.getElementById("inputSok").value;
+    if (inputstreng.length == 0) return;
+    showLoader();
+    $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/person/sok?navn=" + inputstreng, function(data){
+        sessionStorage.setItem("hukommelse",JSON.stringify(data));
+        RedirectPerson();
+    }).error(function(jgXHR, textStatus, errorThrown) {
+       if(jgXHR.status == 404) {
+           // todo
+       }  else {
+           // todo
+       }
+    });
+}

@@ -38,7 +38,10 @@
                             <a title="Tilbake til forsiden" style="margin-right:2em;" href="http://forskningsindeksen.vlab.cs.hioa.no/index.html">Forskningsindeksen</a>
                         </li>
                         <li>
-                            <a><input type="search" id="inputSok" placeholder="Søk etter person"><button id="searchIcon" title="Søk" style="color:white; font-size:19px;" class="glyphicon glyphicon-search"></button></a>
+                            <a>
+                                <input type="search" id="inputSok" placeholder="Søk etter person" onkeypress="manuellInput();" />
+                                <button id="searchIcon" title="Søk" style="color:white; font-size:19px;" class="glyphicon glyphicon-search" onclick="manuellInputKnapp();"></button>
+                            </a>
                         </li>
                         <li>
                             <a><select id="institusjon" onchange="hentInstitusjoner()">
