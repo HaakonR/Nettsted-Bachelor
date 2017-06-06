@@ -2,11 +2,12 @@ var lastClicked = 0,
     personer = [],
     indekser = [],
     flag = false,
+    flag2 = false,
     sokeOrd = "",
     sok = [];
 
 $(function() {
-    
+
     $("#inputSok").val("");
     $( "#inputSok" ).autocomplete({
         minLength: 6,
@@ -40,7 +41,7 @@ function hent() {
                 }
             });
             //$( "#inputSok" ).autocomplete( "option", "source", personer );
-            
+
         });
     }
 }
@@ -48,6 +49,7 @@ function hent() {
 function hentPersoner(id){
     /*sokeOrd = document.getElementById("inputSok").value;
     sok = indekser[personer.indexOf(sokeOrd)];*/
+    flag2 = true;
     showLoader();
     document.getElementById("inputSok").value = "";
     if(id === undefined) {
@@ -103,55 +105,30 @@ $( "#inputSok" ).on( "autocompleteselect", function( event, ui ) {
 });
 
 $('#searchIcon').on('click', function(e) {
-    //hentPersoner();
+    hentManuellPerson();
 });
 
 $('#inputSok').on('keyup', function(e) {
     if (e.keyCode === 13) {
-        //hentPersoner();
+      if(flag == false && flag2 == false){
+        hentManuellPerson();
+      }
     } else if(e.keyCode === 40) {
     } else if(e.keyCode === 38) {
     } else {
         hent();
-        
     }
 });
-
-function manuellInput() {
-    $("#inputSok").on("keyup", function(e) {
-       if (e.keyCode === 13) {
-           hentManuellPerson();
-       }
-    });
-}
-
-function manuellInputKnapp() {
-    $('.nav a').on('click', function(){ 
-        if($('.navbar-toggle').css('display') !='none'){
-            $(".navbar-toggle").trigger( "click" );
-        }
-    });
-    hentManuellPerson();
-}
 
 function hentManuellPerson() {
     var inputstreng = document.getElementById("inputSok").value;
     if (inputstreng.length == 0) return;
     showLoader();
     $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/person/sok?navn=" + inputstreng, function(data){
-        
         sessionStorage.setItem("hukommelse",JSON.stringify(data));
         RedirectPerson();
-    }).error(function(jqXHR, textStatus, errorThrown) {
-        console.log(jqXHR.statusCode);
+    }).error(function(jqXHR) {
         document.getElementById("loader").style.display = "none";
-           document.getElementById("top").style.opacity = "1";
-       if(jqXHR.status == 404) {
-           
-           
-       }  else {
-           // todo
-       }
+        document.getElementById("top").style.opacity = "1";
     });
 }
-

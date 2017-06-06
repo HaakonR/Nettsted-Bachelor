@@ -39,8 +39,8 @@
                         </li>
                         <li>
                             <a>
-                                <input type="search" id="inputSok" placeholder="Søk etter person" onkeypress="manuellInput();" />
-                                <button id="searchIcon" title="Søk" style="color:white; font-size:19px;" class="glyphicon glyphicon-search" onclick="manuellInputKnapp();"></button>
+                                <input type="search" id="inputSok" placeholder="Søk etter person" />
+                                <button id="searchIcon" title="Søk" style="color:white; font-size:19px;" class="glyphicon glyphicon-search"></button>
                             </a>
                         </li>
                         <li>
@@ -271,7 +271,7 @@
                         </thead>
                         <tbody class="kolonne" id = "tabellBody">
                         </tbody>
-                    </table>                
+                    </table>
                     <div id="loaderTabellTotal" style="display:none"></div>
                     <h2 id="tabellFeil"></h2>
                     <div class="navTabell">
@@ -401,7 +401,7 @@
         <script>
             $(document).ready(function(){
                 hentPerson();
-                
+
                 $('[data-toggle="popover"]').popover();
                 $("a").on('click', function(event) {
                     if (this.hash !== "") {
