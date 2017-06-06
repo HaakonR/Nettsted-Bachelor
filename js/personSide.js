@@ -1,5 +1,5 @@
 function nesteFemIntern(frem){
-    showLoader();
+    showLoaderIntern();
     var idSession = JSON.parse(sessionStorage.getItem("hukommelse"));
     var id = idSession.cristinID;
     var rank = sessionStorage.getItem("rankIntern");
@@ -55,11 +55,13 @@ function nesteFemIntern(frem){
             tr.appendChild(tScore);
             var tabell = document.getElementById("tabellBodyTotalIr");
             tabell.appendChild(tr);
+            document.getElementById('loaderTabellIntern').style.display = "none";
         }
     });
 }
 
 function nesteFemInternAarlig(frem){
+    showLoaderAarligIntern();
     var idSession = JSON.parse(sessionStorage.getItem("hukommelse"));
     var id = idSession.cristinID;
     var rank = sessionStorage.getItem("rankInternAarlig");
@@ -117,11 +119,13 @@ function nesteFemInternAarlig(frem){
             tr.appendChild(tScore);
             var tabell = document.getElementById("tabellBodyAarligIr");
             tabell.appendChild(tr);
+            document.getElementById("loaderTabellAarligIntern").style.display = "none";
         }
     });
 }
 
 function nesteFemTotal(frem){
+    showLoaderTabell();
     var url = "",
         idSession = JSON.parse(sessionStorage.getItem("hukommelse")),
         rank = sessionStorage.getItem("rankNytt"),
@@ -181,11 +185,13 @@ function nesteFemTotal(frem){
             tr.appendChild(tScore);
             var tabell = document.getElementById("tabellBody");
             tabell.appendChild(tr);
+            document.getElementById('loaderTabellTotal').style.display = "none";
         }
     });
 }
 
 function nesteFemAarlig(frem){
+    showLoaderAarlig();
     var idSession = JSON.parse(sessionStorage.getItem("hukommelse"));
     var id = idSession.cristinID;
     var rank = sessionStorage.getItem("rankAarlig");
@@ -246,11 +252,14 @@ function nesteFemAarlig(frem){
             tr.appendChild(tScore);
             var tabell = document.getElementById("tabellAarligBody");
             tabell.appendChild(tr);
+            document.getElementById("loaderTabellAarlig").style.display = "none";
         }
     });
 }
 
 function skiftModus() {
+    showLoader();
+    document.getElementById("top").style.opacity = "1";
     var idSession = JSON.parse(sessionStorage.getItem("hukommelse"));
     var id = idSession.cristinID;
     var modus = document.getElementById("modus");
@@ -396,6 +405,8 @@ function skiftModus() {
                     tr.appendChild(tScore);
                     var tabell = document.getElementById("tabellBodyTotalIr");
                     tabell.appendChild(tr);
+                    document.getElementById("loader").style.display = "none";
+                    document.getElementById("top").style.opacity = "1";
                 }
             }
         }
@@ -481,7 +492,7 @@ function skiftAar() {
             if(modus == "0" || modus == "1" || modus == "2" || modus == "3") {
                 var rankAarlig = sessionStorage.getItem("rankAarlig"),
                     rankInternAarlig = sessionStorage.getItem("rankInternAarlig");
-                
+
                 if(rankAarlig <= 3) {
                     document.getElementById("forrigeAarlig").style.display = "none";
                 } else {
@@ -892,3 +903,19 @@ $(document).scroll(function() {
         }
     }
 });
+
+function showLoaderTabell() {
+    document.getElementById('loaderTabellTotal').style.display = "block";
+}
+
+function showLoaderIntern() {
+    document.getElementById('loaderTabellIntern').style.display = "block";
+}
+
+function showLoaderAarlig() {
+    document.getElementById('loaderTabellAarlig').style.display = "block";
+}
+
+function showLoaderAarligIntern() {
+    document.getElementById('loaderTabellAarligIntern').style.display = "block";
+}

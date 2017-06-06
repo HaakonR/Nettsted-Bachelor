@@ -230,9 +230,9 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="diagramWr">
-                    
+
                     <div class="col-md-6 text-center" style="min-width:550px;">
                         <h2>Publikasjoner</h2>
                         <canvas id="canvas"></canvas></div>
@@ -269,7 +269,8 @@
                         </thead>
                         <tbody class="kolonne" id = "tabellBody">
                         </tbody>
-                    </table>
+                    </table>                
+                    <div id="loaderTabellTotal" style="display:none"></div>
                     <h2 id="tabellFeil"></h2>
                     <div class="navTabell">
                         <a class="forrige" id="forrige" onclick="nesteFemTotal(false)"><i class="glyphicon glyphicon-chevron-left"></i> Forrige</a>
@@ -292,6 +293,7 @@
                         <tbody class="kolonne" id = "tabellBodyTotalIr">
                         </tbody>
                     </table>
+                    <div id="loaderTabellIntern" style="display:none"></div>
                     <h2 id="internTabellFeil"></h2>
                     <div class="navTabell">
                         <a class="forrige" id="forrigeIntern" onclick="nesteFemIntern(false)"><i class="glyphicon glyphicon-chevron-left"></i> Forrige</a>
@@ -332,6 +334,7 @@
                         <tbody class="kolonne" id = "tabellAarligBody">
                         </tbody>
                     </table>
+                    <div id="loaderTabellAarlig" style="display:none"></div>
                     <h2 id="aarligTabellFeil"></h2>
                     <div class="navTabell">
                         <a class="forrige" id="forrigeAarlig" onclick="nesteFemAarlig(false)"><i class="glyphicon glyphicon-chevron-left"></i> Forrige</a>
@@ -354,6 +357,7 @@
                         <tbody class="kolonne" id = "tabellBodyAarligIr">
                         </tbody>
                     </table>
+                    <div id="loaderTabellAarligIntern" style="display:none"></div>
                     <h2 id="aarligInternTabellFeil"></h2>
                     <div class="navTabell">
                         <a class="forrige" id="forrigeInternAarlig" onclick="nesteFemInternAarlig(false)"><i class="glyphicon glyphicon-chevron-left"></i> Forrige</a>
@@ -369,8 +373,8 @@
                 <div class="col-md-6 text-muted">
                     <h4 style="color:white; font-size:1.1em;">Forskningsindeksen - 2017</h4>
                     <p class="footerTekst">Forskningsindeksen er et studentprosjekt og er først og fremst ment for underholding og for å skape engasjement rundt forskning.
-                      Informasjonen som presenteres på nettstedet må ikke misbrukes som beslutningsgrunnlag eller ved ressursfordelinger.
-                      Forskningsindeksen bygger på data hentet fra den åpne forskningsdatabasen CRIStin med forbehold om feil og mangler.
+                        Informasjonen som presenteres på nettstedet må ikke misbrukes som beslutningsgrunnlag eller ved ressursfordelinger.
+                        Forskningsindeksen bygger på data hentet fra den åpne forskningsdatabasen CRIStin med forbehold om feil og mangler.
                     </p>
                 </div>
             </div>
