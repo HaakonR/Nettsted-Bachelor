@@ -110,9 +110,9 @@ $('#searchIcon').on('click', function(e) {
 
 $('#inputSok').on('keyup', function(e) {
     if (e.keyCode === 13) {
-      if(flag == false && flag2 == false){
-        hentManuellPerson();
-      }
+        if(flag == false && flag2 == false){
+            hentManuellPerson();
+        }
     } else if(e.keyCode === 40) {
     } else if(e.keyCode === 38) {
     } else {
@@ -123,6 +123,7 @@ $('#inputSok').on('keyup', function(e) {
 function hentManuellPerson() {
     var inputstreng = document.getElementById("inputSok").value;
     if (inputstreng.length == 0) return;
+    $("#inputSok").autocomplete("close");
     showLoader();
     $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/person/sok?navn=" + inputstreng, function(data){
         sessionStorage.setItem("hukommelse",JSON.stringify(data));
