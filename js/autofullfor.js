@@ -9,7 +9,7 @@ $(function() {
     
     $("#inputSok").val("");
     $( "#inputSok" ).autocomplete({
-        minLength: 10,
+        minLength: 6,
         source: [],
         select: function( event, ui ) {flag = true;},
         close: function( event, ui ) {flag = false;},
@@ -19,7 +19,7 @@ $(function() {
 
 function hent() {
     sokeOrd = document.getElementById("inputSok").value;
-    if(sokeOrd.length < 10 || flag) {
+    if(sokeOrd.length < 6 || flag) {
         return;
     } else {
         $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/person/?navn=" + sokeOrd, function(data) {
@@ -57,14 +57,13 @@ function hentPersoner(id){
     $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/person/" + id, function(data) {
         sessionStorage.setItem("hukommelse", JSON.stringify(data));
         RedirectPerson();
-    }).error(function(jqXHR, textStatus, errorThrown) {
+    }).error(function(jqXHR) {
         document.getElementById('top').style.opacity = "1";
         document.getElementById('loader').style.display = "none";
-        if(jqXHR.status == 404) {
-            //Not found
-
+        if(jqXHR.status == "404") {
+            alert("404");
         } else {
-            //Feil
+            alert("FAEN");
         }
     });
 }
