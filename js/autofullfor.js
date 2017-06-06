@@ -26,22 +26,15 @@ function hent() {
         $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/person/?navn=" + sokeOrd, function(data) {
             personer = [];
             indekser = [];
-            /*for(i = 0; i < data.length; i++){
-                personer.push(data[i].navn + " | " + data[i].akronymer);
-                indekser.push(data[i].cristinID);
-            }*/
             $(data).each(function(i) {
                 personer.push(data[i].navn + " | " + data[i].akronymer);
                 indekser.push(data[i].cristinID);
             });
             $("#inputSok").autocomplete({
-
                 source: function(request, response) {
                     response(personer.slice(0,10), request.term.slice);
                 }
             });
-            //$( "#inputSok" ).autocomplete( "option", "source", personer );
-
         });
     }
 }
@@ -63,9 +56,9 @@ function hentPersoner(id){
         document.getElementById('top').style.opacity = "1";
         document.getElementById('loader').style.display = "none";
         if(jqXHR.status == "404") {
-            alert("404");
+
         } else {
-            alert("FAEN");
+
         }
     });
 }
@@ -111,6 +104,7 @@ $('#searchIcon').on('click', function(e) {
 $('#inputSok').on('keyup', function(e) {
     if (e.keyCode === 13) {
         if(flag == false && flag2 == false){
+            $(".ui-autocomplete").css({ display: "none" });
             hentManuellPerson();
         }
     } else if(e.keyCode === 40) {
@@ -123,7 +117,7 @@ $('#inputSok').on('keyup', function(e) {
 function hentManuellPerson() {
     var inputstreng = document.getElementById("inputSok").value;
     if (inputstreng.length == 0) return;
-    $("#inputSok").autocomplete("close");
+    
     showLoader();
     $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/person/sok?navn=" + inputstreng, function(data){
         sessionStorage.setItem("hukommelse",JSON.stringify(data));
