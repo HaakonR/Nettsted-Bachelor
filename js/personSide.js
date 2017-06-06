@@ -31,9 +31,14 @@ function nesteFemIntern(frem){
             m.set(konkurrent.rankNytt,[konkurrent.navn,konkurrent.score,konkurrent.cristinID]);
         }
         var array = [];
+        m.forEach(function(item, key, mapObj){
+          array.push(key);
+        });
+        /*
         for(var key of m.keys()){
             array.push(key);
         }
+        */
         array.sort(function(a,b){
             return a - b;
         });
@@ -95,9 +100,14 @@ function nesteFemInternAarlig(frem){
             m.set(konkurrent.rankNytt,[konkurrent.navn,konkurrent.score,konkurrent.cristinID]);
         }
         var array = [];
+        m.forEach(function(item, key, mapObj){
+          array.push(key);
+        });
+        /*
         for(var key of m.keys()){
             array.push(key);
         }
+        */
         array.sort(function(a,b){
             return a - b;
         });
@@ -158,9 +168,14 @@ function nesteFemTotal(frem){
             m.set(konkurrent.rankNytt,[konkurrent.navn,konkurrent.akronymer,konkurrent.score,konkurrent.cristinID]);
         }
         var array = [];
+        m.forEach(function(item, key, mapObj){
+          array.push(key);
+        });
+        /*
         for(var key of m.keys()){
             array.push(key);
         }
+        */
         array.sort(function(a,b){
             return a - b;
         });
@@ -225,9 +240,14 @@ function nesteFemAarlig(frem){
             m.set(konkurrent.rankNytt,[konkurrent.navn,konkurrent.akronymer,konkurrent.score,konkurrent.cristinID]);
         }
         var array = [];
+        m.forEach(function(item, key, mapObj){
+          array.push(key);
+        });
+        /*
         for(var key of m.keys()){
             array.push(key);
         }
+        */
         array.sort(function(a,b){
             return a - b;
         });
@@ -294,9 +314,14 @@ function skiftModus() {
             }
             m.set(data.rankNytt,[data.navn, data.akronymer, data.poengNytt]);
             var array = [];
+            m.forEach(function(item, key, mapObj){
+              array.push(key);
+            });
+            /*
             for(var key of m.keys()){
                 array.push(key);
             }
+            */
             array.sort(function(a,b){
                 return a - b;
             });
@@ -372,9 +397,14 @@ function skiftModus() {
                 }
                 m.set(intern.rank,[data.navn, intern.score]);
                 var array = [];
+                m.forEach(function(item, key, mapObj){
+                  array.push(key);
+                });
+                /*
                 for(var key of m.keys()){
                     array.push(key);
                 }
+                */
                 array.sort(function(a,b){
                     return a - b;
                 });
@@ -450,9 +480,14 @@ function skiftAar() {
             }
             m.set(data[0].rank,[data[0].navn, data[0].akronymer, data[0].score]);
             var array = [];
+            m.forEach(function(item, key, mapObj){
+              array.push(key);
+            });
+            /*
             for(var key of m.keys()){
                 array.push(key);
             }
+            */
             array.sort(function(a,b){
                 return a - b;
             });
@@ -512,9 +547,14 @@ function skiftAar() {
             }
             m.set(data[1].rank,[data[1].navn, data[1].score]);
             var array = [];
+            m.forEach(function(item, key, mapObj){
+              array.push(key);
+            });
+            /*
             for(var key of m.keys()){
                 array.push(key);
             }
+            */
             array.sort(function(a,b){
                 return a - b;
             });
@@ -625,9 +665,14 @@ function hentPerson() {
         }
         m.set(data.rankNytt,[data.navn, data.akronymer, data.poengNytt]);
         var array = [];
+        m.forEach(function(item, key, mapObj){
+          array.push(key);
+        });
+        /*
         for(var key of m.keys()){
             array.push(key);
         }
+        */
         array.sort(function(a,b){
             return a - b;
         });
@@ -707,9 +752,14 @@ function hentPerson() {
             }
             m.set(aarlig.rank,[aarlig.navn, data.akronymer, aarlig.score]);
             var array = [];
+            m.forEach(function(item, key, mapObj){
+              array.push(key);
+            });
+            /*
             for(var key of m.keys()){
                 array.push(key);
             }
+            */
             array.sort(function(a,b){
                 return a - b;
             });
@@ -759,9 +809,14 @@ function hentPerson() {
             }
             m.set(intern.rank,[data.navn, intern.score]);
             var array = [];
+            m.forEach(function(item, key, mapObj){
+              array.push(key);
+            });
+            /*
             for(var key of m.keys()){
                 array.push(key);
             }
+            */
             array.sort(function(a,b){
                 return a - b;
             });
@@ -804,9 +859,14 @@ function hentPerson() {
                 }
                 m.set(internAarlig.rank,[internAarlig.navn, internAarlig.score]);
                 var array = [];
+                m.forEach(function(item, key, mapObj){
+                  array.push(key);
+                });
+                /*
                 for(var key of m.keys()){
                     array.push(key);
                 }
+                */
                 array.sort(function(a,b){
                     return a - b;
                 });

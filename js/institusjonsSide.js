@@ -26,9 +26,14 @@ function hentInstitusjon() {
     m.set(konkurrent4.rankNytt,[konkurrent4.navn,konkurrent4.cristinID, konkurrent4.score]);
     m.set(data.rankNytt,[data.navn, data.akronymer, data.poengNytt]);
     var array = [];
+    m.forEach(function(item, key, mapObj){
+      array.push(key);
+    });
+    /*
     for(var key of m.keys()){
         array.push(key);
     }
+    */
     array.sort(function(a,b){
         return a - b;
     });
@@ -69,9 +74,14 @@ function hentInstitusjon() {
         }
         m.set(aarlig.rank,[aarlig.navn, aarlig.score]);
         var array = [];
+        m.forEach(function(item, key, mapObj){
+          array.push(key);
+        });
+        /*
         for(var key of m.keys()){
             array.push(key);
         }
+        */
         array.sort(function(a,b){
             return a - b;
         });
@@ -128,9 +138,14 @@ function skiftModus() {
             }
             m.set(data.rankNytt,[data.navn, data.poengNytt]);
             var array = [];
+            m.forEach(function(item, key, mapObj){
+              array.push(key);
+            });
+            /*
             for(var key of m.keys()){
                 array.push(key);
             }
+            */
             array.sort(function(a,b){
                 return a - b;
             });
@@ -191,9 +206,14 @@ function skiftAar() {
             }
             m.set(data[0].rank,[data[0].navn, data[0].score]);
             var array = [];
+            m.forEach(function(item, key, mapObj){
+              array.push(key);
+            });
+            /*
             for(var key of m.keys()){
                 array.push(key);
             }
+            */
             array.sort(function(a,b){
                 return a - b;
             });
