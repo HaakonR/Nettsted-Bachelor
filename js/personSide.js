@@ -422,6 +422,7 @@ function skiftModus() {
                     }
                     else{
                         tNavn.innerHTML = "<a title='Klikk for å se denne personen' id='btnTabell' onclick=tabellSok("+person[2]+")>" + person[0] + "</a>";
+                        
                         tRank.innerHTML = array[index];
                     }
                     if(modus.value == "2") {
@@ -930,6 +931,7 @@ function Redirect() {
 }
 
 function tabellSok(id){
+    showLoader();
     $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/person/" + id, function(data) {
         sessionStorage.setItem("hukommelse", JSON.stringify(data));
         Redirect();
