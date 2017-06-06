@@ -32,7 +32,7 @@ function nesteFemIntern(frem){
         }
         var array = [];
         m.forEach(function(item, key, mapObj){
-          array.push(key);
+            array.push(key);
         });
         /*
         for(var key of m.keys()){
@@ -101,7 +101,7 @@ function nesteFemInternAarlig(frem){
         }
         var array = [];
         m.forEach(function(item, key, mapObj){
-          array.push(key);
+            array.push(key);
         });
         /*
         for(var key of m.keys()){
@@ -169,7 +169,7 @@ function nesteFemTotal(frem){
         }
         var array = [];
         m.forEach(function(item, key, mapObj){
-          array.push(key);
+            array.push(key);
         });
         /*
         for(var key of m.keys()){
@@ -241,7 +241,7 @@ function nesteFemAarlig(frem){
         }
         var array = [];
         m.forEach(function(item, key, mapObj){
-          array.push(key);
+            array.push(key);
         });
         /*
         for(var key of m.keys()){
@@ -315,7 +315,7 @@ function skiftModus() {
             m.set(data.rankNytt,[data.navn, data.akronymer, data.poengNytt]);
             var array = [];
             m.forEach(function(item, key, mapObj){
-              array.push(key);
+                array.push(key);
             });
             /*
             for(var key of m.keys()){
@@ -398,7 +398,7 @@ function skiftModus() {
                 m.set(intern.rank,[data.navn, intern.score]);
                 var array = [];
                 m.forEach(function(item, key, mapObj){
-                  array.push(key);
+                    array.push(key);
                 });
                 /*
                 for(var key of m.keys()){
@@ -422,7 +422,7 @@ function skiftModus() {
                     }
                     else{
                         tNavn.innerHTML = "<a title='Klikk for å se denne personen' id='btnTabell' onclick=tabellSok("+person[2]+")>" + person[0] + "</a>";
-                        
+
                         tRank.innerHTML = array[index];
                     }
                     if(modus.value == "2") {
@@ -445,6 +445,7 @@ function skiftModus() {
 }
 
 function skiftAar() {
+    showLoader();
     var idSession = JSON.parse(sessionStorage.getItem("hukommelse"));
     var id = idSession.cristinID;
     var aar = document.getElementById("aar").value;
@@ -482,7 +483,7 @@ function skiftAar() {
             m.set(data[0].rank,[data[0].navn, data[0].akronymer, data[0].score]);
             var array = [];
             m.forEach(function(item, key, mapObj){
-              array.push(key);
+                array.push(key);
             });
             /*
             for(var key of m.keys()){
@@ -549,7 +550,7 @@ function skiftAar() {
             m.set(data[1].rank,[data[1].navn, data[1].score]);
             var array = [];
             m.forEach(function(item, key, mapObj){
-              array.push(key);
+                array.push(key);
             });
             /*
             for(var key of m.keys()){
@@ -586,6 +587,8 @@ function skiftAar() {
                 tr.appendChild(tScore);
                 var tabell = document.getElementById("tabellBodyAarligIr");
                 tabell.appendChild(tr);
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("top").style.opacity = "1";
             }
         }
     });
@@ -667,7 +670,7 @@ function hentPerson() {
         m.set(data.rankNytt,[data.navn, data.akronymer, data.poengNytt]);
         var array = [];
         m.forEach(function(item, key, mapObj){
-          array.push(key);
+            array.push(key);
         });
         /*
         for(var key of m.keys()){
@@ -754,7 +757,7 @@ function hentPerson() {
             m.set(aarlig.rank,[aarlig.navn, data.akronymer, aarlig.score]);
             var array = [];
             m.forEach(function(item, key, mapObj){
-              array.push(key);
+                array.push(key);
             });
             /*
             for(var key of m.keys()){
@@ -811,7 +814,7 @@ function hentPerson() {
             m.set(intern.rank,[data.navn, intern.score]);
             var array = [];
             m.forEach(function(item, key, mapObj){
-              array.push(key);
+                array.push(key);
             });
             /*
             for(var key of m.keys()){
@@ -861,7 +864,7 @@ function hentPerson() {
                 m.set(internAarlig.rank,[internAarlig.navn, internAarlig.score]);
                 var array = [];
                 m.forEach(function(item, key, mapObj){
-                  array.push(key);
+                    array.push(key);
                 });
                 /*
                 for(var key of m.keys()){

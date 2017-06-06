@@ -50,6 +50,7 @@ function hentTopp10Tidsskrifter2016N2() {
 }
 
 function hentPerson(id) {
+    showLoader();
     $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/person/" + id, function(data) {
         sessionStorage.setItem("hukommelse", JSON.stringify(data));
         RedirectPerson();
@@ -57,6 +58,7 @@ function hentPerson(id) {
 }
 
 function hentInstitusjon(id) {
+    showLoader();
     $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/institusjon/" + id, function(data) {
         sessionStorage.setItem("institusjon", JSON.stringify(data));
         RedirectInstitusjon();

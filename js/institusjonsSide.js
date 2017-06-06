@@ -27,7 +27,7 @@ function hentInstitusjon() {
     m.set(data.rankNytt,[data.navn, data.akronymer, data.poengNytt]);
     var array = [];
     m.forEach(function(item, key, mapObj){
-      array.push(key);
+        array.push(key);
     });
     /*
     for(var key of m.keys()){
@@ -75,7 +75,7 @@ function hentInstitusjon() {
         m.set(aarlig.rank,[aarlig.navn, aarlig.score]);
         var array = [];
         m.forEach(function(item, key, mapObj){
-          array.push(key);
+            array.push(key);
         });
         /*
         for(var key of m.keys()){
@@ -114,6 +114,7 @@ function hentInstitusjon() {
 }
 
 function skiftModus() {
+    showLoader();
     var idSession = JSON.parse(sessionStorage.getItem("institusjon"));
     var id = idSession.cristinID;
     var modus = document.getElementById("modus");
@@ -139,7 +140,7 @@ function skiftModus() {
             m.set(data.rankNytt,[data.navn, data.poengNytt]);
             var array = [];
             m.forEach(function(item, key, mapObj){
-              array.push(key);
+                array.push(key);
             });
             /*
             for(var key of m.keys()){
@@ -176,6 +177,8 @@ function skiftModus() {
                 tr.appendChild(tScore);
                 var tabell = document.getElementById("tabellBody");
                 tabell.appendChild(tr);
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("top").style.opacity = "1";
             }
         }
     });
@@ -183,6 +186,7 @@ function skiftModus() {
 }
 
 function skiftAar() {
+    showLoader();
     var idSession = JSON.parse(sessionStorage.getItem("institusjon"));
     var id = idSession.cristinID;
     var aar = document.getElementById("aar").value;
@@ -207,7 +211,7 @@ function skiftAar() {
             m.set(data[0].rank,[data[0].navn, data[0].score]);
             var array = [];
             m.forEach(function(item, key, mapObj){
-              array.push(key);
+                array.push(key);
             });
             /*
             for(var key of m.keys()){
@@ -244,6 +248,8 @@ function skiftAar() {
                 tr.appendChild(tScore);
                 var tabell = document.getElementById("tabellAarligBody");
                 tabell.appendChild(tr);
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("top").style.opacity = "1";
             }
         }
     });
@@ -259,6 +265,7 @@ function tilbakeForside() {
 }
 
 function tabellSok(id){
+    showLoader();
     $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/institusjon/" + id, function(data) {
         sessionStorage.setItem("institusjon", JSON.stringify(data));
         Redirect();
