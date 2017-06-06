@@ -1,4 +1,5 @@
 function nesteFemIntern(frem){
+    showLoader();
     var idSession = JSON.parse(sessionStorage.getItem("hukommelse"));
     var id = idSession.cristinID;
     var rank = sessionStorage.getItem("rankIntern");
@@ -328,14 +329,12 @@ function skiftModus() {
                 document.getElementById("internTabellFeil").innerHTML = "INGEN AKTIVE TILHØRIGHETER!";
             } else {
                 var intern = data.intern;
-                console.log("Intern rangering etter " + intern.rank);
                 sessionStorage.setItem("rankIntern", intern.rank);
                 if(modus.value == "0" || modus.value == "1" || modus.value == "2" || modus.value == "3") {
                     var rankTotalt = data.rankNytt,
                         rankIntern = sessionStorage.getItem("rankIntern"),
                         rankInternAarlig = sessionStorage.getItem("rankInternAarlig"),
                         rankAarlig = sessionStorage.getItem("rankAarlig");
-                    console.log("Intern rangering før " + rankIntern);
                     if(rankTotalt <= 3) {
                         document.getElementById("forrige").style.display = "none";
                     } else {
@@ -464,7 +463,7 @@ function skiftAar() {
                     tRank.innerHTML = array[index];
                 }
                 tAkronym.innerHTML = person[1];
-                if(modus.value == "2") {
+                if(modus == "2") {
                     tScore.innerHTML = person[2].toLocaleString();
                 } else {
                     tScore.innerHTML = person[2];
@@ -482,8 +481,7 @@ function skiftAar() {
             if(modus == "0" || modus == "1" || modus == "2" || modus == "3") {
                 var rankAarlig = sessionStorage.getItem("rankAarlig"),
                     rankInternAarlig = sessionStorage.getItem("rankInternAarlig");
-                console.log(rankAarlig);
-                console.log(rankInternAarlig);
+                
                 if(rankAarlig <= 3) {
                     document.getElementById("forrigeAarlig").style.display = "none";
                 } else {

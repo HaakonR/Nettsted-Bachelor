@@ -7,39 +7,39 @@ var lastClicked = 0,
 
 $(function() {
     $( "#inputSok" ).autocomplete({
-        minLength: 5,
+        minLength: 10,
         source: [],
         select: function( event, ui ) {flag = true;},
         close: function( event, ui ) {flag = false;},
+
     });
 });
 
 function hent() {
-    var now = new Date();
-    if(now - lastClicked > 100){
-        lastClicked = now;
-        sokeOrd = document.getElementById("inputSok").value;
-        if(sokeOrd.length < 5 || flag) {
-            return;
-        } $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/person/?navn=" + sokeOrd, function(data) {
+    sokeOrd = document.getElementById("inputSok").value;
+    if(sokeOrd.length < 10 || flag) {
+        return;
+    } else {
+        $.getJSON("http://forskningsindeksen.vlab.cs.hioa.no:9999/api.forskningsindeksen/v1/person/?navn=" + sokeOrd, function(data) {
             personer = [];
             indekser = [];
+            /*for(i = 0; i < data.length; i++){
+                personer.push(data[i].navn + " | " + data[i].akronymer);
+                indekser.push(data[i].cristinID);
+            }*/
             $(data).each(function(i) {
                 personer.push(data[i].navn + " | " + data[i].akronymer);
                 indekser.push(data[i].cristinID);
             });
             $("#inputSok").autocomplete({
+
                 source: function(request, response) {
                     response(personer.slice(0,10), request.term.slice);
                 }
             });
             //$( "#inputSok" ).autocomplete( "option", "source", personer );
-        }).error(function(jqXHR, textStatus, errorThrown) {
-            if(jqXHR.status == 404) {
-
-            }
+            
         });
-
     }
 }
 
@@ -112,5 +112,6 @@ $('#inputSok').on('keyup', function(e) {
     } else if(e.keyCode === 38) {
     } else {
         hent();
+        
     }
 });

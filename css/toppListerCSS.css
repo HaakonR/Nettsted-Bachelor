@@ -25,21 +25,112 @@ body {
     color: white;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  color: white;
+    color: white;
 }
 :-ms-input-placeholder { /* IE 10+ */
-  color: white;
+    color: white;
 }
 :-moz-placeholder { /* Firefox 18- */
-  color: white;
+    color: white;
+}
+
+.navbar-toggle:hover {
+    background-color: transparent !important;
+}
+.navbar-toggle:focus {
+    background-color: transparent !important;
+}
+.navbar-toggle:active {
+    background-color: transparent !important;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+    width: 25px;
+    height: 3px;
+}
+
+.navbar-toggle .icon-bar:nth-of-type(2) {
+    top: 1px;
+}
+
+.navbar-toggle .icon-bar:nth-of-type(3) {
+    top: 2px;
+}
+
+.navbar-toggle .icon-bar {
+    position: relative;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+.navbar-toggle.active .icon-bar:nth-of-type(1) {
+    top: 6px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.navbar-toggle.active .icon-bar:nth-of-type(2) {
+    background-color: transparent !important;
+}
+
+.navbar-toggle.active .icon-bar:nth-of-type(3) {
+    top: -8px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+@media all and (max-width: 1300px) and (min-width: 768px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        margin-right: 1px;
+        display: block;
+    }
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+    .navbar-nav {
+        float: none !important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 0;
+        margin-left: 0;
+    }
+    .collapse.in {
+        display: block !important;
+    }
 }
 
 @media all and (max-width: 768px) {
+    body {
+        padding-top: 55px;
+    }
+    #inputSok {
+        width: 12em !important;
+    }
+    #institusjon {
+        width: 12em !important;
+    }
+    #infoCircle {
+        display: none;
+    }
     #to-top {
         position: relative !important;
         color: white !important;
     }
 }
+
 
 .ui-autocomplete {
     z-index:2000 !important;
@@ -51,7 +142,7 @@ body {
     color: black;
     font-size: 15px;
     width: 18em !important;
- 
+
 }
 
 #searchIcon {
@@ -71,7 +162,7 @@ body {
     border-bottom: 1px solid white;
     -webkit-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out;
-   
+
 }
 
 .col-md-6 {
@@ -104,13 +195,6 @@ td {
     color: white;
 }
 
-.navbar-toggle:hover,
-.navbar-toggle:active,
-.navbar-toggle:focus {
-    background-color: grey;
-    color: black;
-}
-
 .navbar-default .navbar-nav>li>a {
     color: white;
     font-size: 18px;
@@ -126,10 +210,6 @@ td {
 #btnTabell {
     color: black !important;
     cursor: pointer;
-}
-
-.navbar-default .navbar-nav>li>a:focus {
-    color:grey;
 }
 
 #footer {

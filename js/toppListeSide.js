@@ -121,7 +121,7 @@ function tidsskrift(url, tabell) {
             tRank.innerHTML = i + 1;
             let tNavn = document.createElement("td");
             tNavn.innerHTML =
-                "<a title='Til tidsskriftet sin nettside' id='btnTabell' target='_blank' href='"+data[i].url+"'>"+data[i].navn+"</a>";
+                "<a id='btnTabell'>"+data[i].navn+"</a>";
             let tPoeng = document.createElement("td");
             tPoeng.innerHTML = data[i].antallPublikasjoner;
 

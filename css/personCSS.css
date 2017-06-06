@@ -27,7 +27,7 @@ select:focus, input:focus {
 }
 
 #loader {
-    position: absolute;
+    position: fixed;
     left: 50%;
     top: 40%;
     z-index: 1;
