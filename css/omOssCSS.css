@@ -29,6 +29,18 @@ body {
     margin: 0 auto;
 }
 
+img {
+    width: 50% !important;
+}
+
+#oppdrag {
+    height: auto !important;
+}
+
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+    height: 190px;
+}
+
 .navbar-default .navbar-nav>li>a {
     color: white;
     font-size: 18px;

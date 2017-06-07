@@ -303,6 +303,7 @@ function skiftModus() {
         if(data.navn == "Ingen produksjon"){
             document.getElementById("tabellFeil").innerHTML = "INGEN PRODUKSJON!";
             document.getElementById("internTabellFeil").innerHTML = "INGEN PRODUKSJON!";
+            document.getElementById("loader").style.display = "none";
         } else{
             sessionStorage.setItem("rankNytt", data.rankNytt);
 
@@ -469,6 +470,7 @@ function skiftAar() {
             document.getElementById("nesteAarlig").style.display = "none";
             document.getElementById("forrigeInternAarlig").style.display = "none";
             document.getElementById("nesteInternAarlig").style.display = "none";
+            document.getElementById("loader").style.display = "none";
         } else {
             document.getElementById("nesteAarlig").style.display = "inline";
             document.getElementById("nesteInternAarlig").style.display = "inline";
@@ -625,7 +627,7 @@ function hentPerson() {
         fjernData2("visningLabel");
         fjernData2("norgesRank");
         fjernData2("internRank");
-        fjernData2("infoCircle");
+        //fjernData2("infoCircle");
         fjernData2("footer");
         document.getElementById("status").innerHTML = data.status;
     } else{
