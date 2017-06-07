@@ -29,7 +29,7 @@ select:focus, input:focus {
 #loader {
     position: fixed;
     left: 50%;
-    top: 40%;
+    top: 50%;
     z-index: 1;
     width: 150px;
     height: 150px;
@@ -345,6 +345,44 @@ canvas {
     }
     .navTabell  {
         margin-bottom: 3em;
+    }  
+    #loader {
+        position: fixed;
+        left: 55% !important;
+        top: 50% !important;
+        width: 130px;
+        height: 130px;
+    }
+}
+
+@media all and (max-width: 450px) {
+    #loaderTabellTotal {
+        position: absolute;
+        left: 60% !important;
+        bottom: 33% !important; 
+        width: 80px !important;
+        height: 80px !important;
+    }
+    #loaderTabellIntern {
+        position: absolute;
+        left: 60% !important;
+        bottom: 33% !important; 
+        width: 80px !important;
+        height: 80px !important;
+    }
+    #loaderTabellAarlig {
+        position: absolute;
+        left: 60% !important;
+        bottom: 33% !important;
+        width: 80px !important;
+        height: 80px !important;
+    }
+    #loaderTabellAarligIntern {
+        position: absolute;
+        left: 60% !important;
+        bottom: 33% !important;
+        width: 80px !important;
+        height: 80px !important;
     }
 }
 
