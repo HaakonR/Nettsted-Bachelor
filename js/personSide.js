@@ -305,6 +305,8 @@ function skiftModus() {
             document.getElementById("internTabellFeil").innerHTML = "INGEN PRODUKSJON!";
             document.getElementById("forrige").style.display = "none";
             document.getElementById("neste").style.display = "none";
+            document.getElementById("forrigeIntern").style.display = "none";
+            document.getElementById("nesteIntern").style.display = "none";
             document.getElementById("loader").style.display = "none";
         } else{
             sessionStorage.setItem("rankNytt", data.rankNytt);
