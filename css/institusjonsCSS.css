@@ -22,7 +22,7 @@ select:focus, input:focus{
 #loader {
     position: fixed;
     left: 50%;
-    top: 40%;
+    top: 50%;
     z-index: 1;
     width: 150px;
     height: 150px;
@@ -251,6 +251,13 @@ canvas {
     }
     .poeng {
         width: 100px !important;
+    }
+    #loader {
+        position: fixed;
+        left: 55% !important;
+        top: 50% !important;
+        width: 130px;
+        height: 130px;
     }
 }
 

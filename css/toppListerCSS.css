@@ -24,7 +24,7 @@ body {
 #loader {
     position: fixed;
     left: 50%;
-    top: 40%;
+    top: 50%;
     z-index: 1;
     width: 150px;
     height: 150px;
@@ -135,6 +135,10 @@ body {
     .collapse.in {
         display: block !important;
     }
+    #to-top {
+        position: relative !important;
+        color: white !important;
+    }
 }
 
 @media all and (max-width: 768px) {
@@ -153,6 +157,13 @@ body {
     #to-top {
         position: relative !important;
         color: white !important;
+    }
+    #loader {
+        position: fixed;
+        left: 53% !important;
+        top: 50% !important;
+        width: 130px;
+        height: 130px;
     }
 }
 

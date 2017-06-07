@@ -278,8 +278,7 @@ function nesteFemAarlig(frem){
 }
 
 function skiftModus() {
-    showLoader();
-    document.getElementById("top").style.opacity = "1";
+    showLoaderModus();
     var idSession = JSON.parse(sessionStorage.getItem("hukommelse"));
     var id = idSession.cristinID;
     var modus = document.getElementById("modus");
@@ -437,7 +436,6 @@ function skiftModus() {
                     var tabell = document.getElementById("tabellBodyTotalIr");
                     tabell.appendChild(tr);
                     document.getElementById("loader").style.display = "none";
-                    document.getElementById("top").style.opacity = "1";
                 }
             }
         }
@@ -445,7 +443,7 @@ function skiftModus() {
 }
 
 function skiftAar() {
-    showLoader();
+    showLoaderModus();
     var idSession = JSON.parse(sessionStorage.getItem("hukommelse"));
     var id = idSession.cristinID;
     var aar = document.getElementById("aar").value;
@@ -588,7 +586,6 @@ function skiftAar() {
                 var tabell = document.getElementById("tabellBodyAarligIr");
                 tabell.appendChild(tr);
                 document.getElementById("loader").style.display = "none";
-                document.getElementById("top").style.opacity = "1";
             }
         }
     });
@@ -983,4 +980,8 @@ function showLoaderAarlig() {
 
 function showLoaderAarligIntern() {
     document.getElementById('loaderTabellAarligIntern').style.display = "block";
+}
+
+function showLoaderModus() {
+    document.getElementById('loader').style.display = "block";
 }
