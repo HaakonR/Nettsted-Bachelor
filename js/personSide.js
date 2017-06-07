@@ -385,7 +385,7 @@ function skiftModus() {
                     } else {
                         document.getElementById("forrigeIntern").style.display = "inline";
                     }
-                    if(rankInternAarlig <= 3) {
+                    /*if(rankInternAarlig <= 3) {
                         document.getElementById("forrigeInternAarlig").style.display = "none";
                     } else {
                         document.getElementById("forrigeInternAarlig").style.display = "inline";
@@ -394,7 +394,7 @@ function skiftModus() {
                         document.getElementById("forrigeAarlig").style.display = "none";
                     } else {
                         document.getElementById("forrigeAarlig").style.display = "inline";
-                    }
+                    }*/
                 }
                 m = new Map();
                 for(i = 0; i < intern.internKonkurrenter.length; i++){
@@ -481,6 +481,14 @@ function skiftAar() {
             document.getElementById("nesteAarlig").style.display = "inline";
             document.getElementById("nesteInternAarlig").style.display = "inline";
             sessionStorage.setItem("rankAarlig", data[0].rank);
+            if(modus == "0" || modus == "1" || modus == "2" || modus == "3") {
+                var rankAarlig = sessionStorage.getItem("rankAarlig");
+                if(rankAarlig <= 3) {
+                    document.getElementById("forrigeAarlig").style.display = "none";
+                } else {
+                    document.getElementById("forrigeAarlig").style.display = "inline";
+                }
+            }
             m = new Map();
             for(i = 0; i < data[0].konkurrenter.length; i++){
                 var konkurrent = data[0].konkurrenter[i];
@@ -530,29 +538,28 @@ function skiftAar() {
                 var tabell = document.getElementById("tabellAarligBody");
                 tabell.appendChild(tr);
             }
-            sessionStorage.setItem("rankInternAarlig", data[1].rank);
-
-            if(modus == "0" || modus == "1" || modus == "2" || modus == "3") {
-                var rankAarlig = sessionStorage.getItem("rankAarlig"),
-                    rankInternAarlig = sessionStorage.getItem("rankInternAarlig");
-
-                if(rankAarlig <= 3) {
-                    document.getElementById("forrigeAarlig").style.display = "none";
-                } else {
-                    document.getElementById("forrigeAarlig").style.display = "inline";
-                }
-                if(rankInternAarlig <= 3) {
-                    document.getElementById("forrigeInternAarlig").style.display = "none";
-                } else {
-                    document.getElementById("forrigeInternAarlig").style.display = "inline";
-                }
-            }
             if(data[1].navn == "Ingen produksjon") {
                 document.getElementById("aarligInternTabellFeil").innerHTML = "INGEN PRODUKSJON I DETTE ÅRET!";
                 document.getElementById("forrigeInternAarlig").style.display = "none";
                 document.getElementById("nesteInternAarlig").style.display = "none";
                 document.getElementById("loader").style.display = "none";
             } else {
+                sessionStorage.setItem("rankInternAarlig", data[1].rank);
+                if(modus == "0" || modus == "1" || modus == "2" || modus == "3") {
+                    var rankAarlig = sessionStorage.getItem("rankAarlig"),
+                        rankInternAarlig = sessionStorage.getItem("rankInternAarlig");
+
+                    if(rankAarlig <= 3) {
+                        document.getElementById("forrigeAarlig").style.display = "none";
+                    } else {
+                        document.getElementById("forrigeAarlig").style.display = "inline";
+                    }
+                    if(rankInternAarlig <= 3) {
+                        document.getElementById("forrigeInternAarlig").style.display = "none";
+                    } else {
+                        document.getElementById("forrigeInternAarlig").style.display = "inline";
+                    }
+                }
                 m = new Map();
                 for(i = 0; i < data[1].konkurrenter.length; i++){
                     var konkurrent = data[1].konkurrenter[i];
