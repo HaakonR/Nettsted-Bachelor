@@ -541,53 +541,59 @@ function skiftAar() {
                     document.getElementById("forrigeInternAarlig").style.display = "inline";
                 }
             }
-
-            m = new Map();
-            for(i = 0; i < data[1].konkurrenter.length; i++){
-                var konkurrent = data[1].konkurrenter[i];
-                m.set(konkurrent.rankNytt,[konkurrent.navn,konkurrent.score,konkurrent.cristinID]);
-            }
-            m.set(data[1].rank,[data[1].navn, data[1].score]);
-            var array = [];
-            m.forEach(function(item, key, mapObj){
-                array.push(key);
-            });
-            /*
+            if(data[1].navn == "Ingen produksjon") {
+                document.getElementById("aarligInternTabellFeil").innerHTML = "INGEN PRODUKSJON I DETTE ÅRET!";
+                document.getElementById("forrigeInternAarlig").style.display = "none";
+                document.getElementById("nesteInternAarlig").style.display = "none";
+                document.getElementById("loader").style.display = "none";
+            } else {
+                m = new Map();
+                for(i = 0; i < data[1].konkurrenter.length; i++){
+                    var konkurrent = data[1].konkurrenter[i];
+                    m.set(konkurrent.rankNytt,[konkurrent.navn,konkurrent.score,konkurrent.cristinID]);
+                }
+                m.set(data[1].rank,[data[1].navn, data[1].score]);
+                var array = [];
+                m.forEach(function(item, key, mapObj){
+                    array.push(key);
+                });
+                /*
             for(var key of m.keys()){
                 array.push(key);
             }
             */
-            array.sort(function(a,b){
-                return a - b;
-            });
-            var index = 0;
-            for(i = 0; i < array.length;i++){
-                var tr = document.createElement("tr");
-                var tNavn = document.createElement("td");
-                var tRank = document.createElement("td");
-                var tScore = document.createElement("td");
-                var person = m.get(array[index]);
-                if(array[i] == data[1].rank){
-                    // HENT PERSON AKRONYMR HER
-                    tNavn.innerHTML = data[1].navn;
-                    tRank.innerHTML = array[i];
+                array.sort(function(a,b){
+                    return a - b;
+                });
+                var index = 0;
+                for(i = 0; i < array.length;i++){
+                    var tr = document.createElement("tr");
+                    var tNavn = document.createElement("td");
+                    var tRank = document.createElement("td");
+                    var tScore = document.createElement("td");
+                    var person = m.get(array[index]);
+                    if(array[i] == data[1].rank){
+                        // HENT PERSON AKRONYMR HER
+                        tNavn.innerHTML = data[1].navn;
+                        tRank.innerHTML = array[i];
+                    }
+                    else{
+                        tNavn.innerHTML = "<a title='Klikk for å se denne personen' id='btnTabell' onclick=tabellSok("+person[2]+")>" + person[0] + "</a>";
+                        tRank.innerHTML = array[index];
+                    }
+                    if(modus == "2") {
+                        tScore.innerHTML = person[1].toLocaleString();
+                    } else {
+                        tScore.innerHTML = person[1];
+                    }
+                    index++;
+                    tr.appendChild(tRank);
+                    tr.appendChild(tNavn);
+                    tr.appendChild(tScore);
+                    var tabell = document.getElementById("tabellBodyAarligIr");
+                    tabell.appendChild(tr);
+                    document.getElementById("loader").style.display = "none";
                 }
-                else{
-                    tNavn.innerHTML = "<a title='Klikk for å se denne personen' id='btnTabell' onclick=tabellSok("+person[2]+")>" + person[0] + "</a>";
-                    tRank.innerHTML = array[index];
-                }
-                if(modus == "2") {
-                    tScore.innerHTML = person[1].toLocaleString();
-                } else {
-                    tScore.innerHTML = person[1];
-                }
-                index++;
-                tr.appendChild(tRank);
-                tr.appendChild(tNavn);
-                tr.appendChild(tScore);
-                var tabell = document.getElementById("tabellBodyAarligIr");
-                tabell.appendChild(tr);
-                document.getElementById("loader").style.display = "none";
             }
         }
     });
