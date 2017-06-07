@@ -303,6 +303,8 @@ function skiftModus() {
         if(data.navn == "Ingen produksjon"){
             document.getElementById("tabellFeil").innerHTML = "INGEN PRODUKSJON!";
             document.getElementById("internTabellFeil").innerHTML = "INGEN PRODUKSJON!";
+            document.getElementById("forrige").style.display = "none";
+            document.getElementById("neste").style.display = "none";
             document.getElementById("loader").style.display = "none";
         } else{
             sessionStorage.setItem("rankNytt", data.rankNytt);
@@ -361,6 +363,8 @@ function skiftModus() {
             if(data.akronymer == "") {
                 document.getElementById("internTabellFeil").innerHTML = "INGEN AKTIVE TILHØRIGHETER!";
                 document.getElementById("internTabellFeil").innerHTML = "INGEN AKTIVE TILHØRIGHETER!";
+                document.getElementById("forrigeIntern").style.display = "none";
+                document.getElementById("nesteIntern").style.display = "none";
             } else {
                 var intern = data.intern;
                 sessionStorage.setItem("rankIntern", intern.rank);
